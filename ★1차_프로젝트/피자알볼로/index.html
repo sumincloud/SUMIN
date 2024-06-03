@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>피자알볼로</title>
+  <!-- 파비콘 이미지 삽입하기 -->
+  <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+
+  <!-- 폰트어썸 아이콘 삽입하기 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- 1. 초기화 -->
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <!-- 2. 공통서식 -->
+  <link rel="stylesheet" href="./css/common.css" type="text/css">
+  <!-- 3. 메인서식 -->
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
+  <!-- Swiper JS -->
+  <script src="./script/swiper-bundle.min.js"></script>
+
+
+</head>
+<body>
+  <form name="form" method="post" action="aaa">
+    <!-- 헤더영역 시작 -->
+    <header>
+      <div class="header_box">
+        <div class="logo">
+          <h1>
+            <a href="index.html" title="메인페이지로 바로가기">
+              <img src="./images/logo.png" alt="상단로고">
+            </a>
+          </h1>
+        </div>
+
+        <nav class="top_lnb">
+          <ul>
+            <li><a href="#" title="로그인">로그인</a></li>
+            <li>&#x007C;</li>
+            <li><a href="#" title="회원가입">회원가입</a></li>
+            <li><a href="#" title="나의정보"><img src="./images/icon_user.png" alt="나의정보"></a></li>
+            <li><a href="#" title="장바구니"><img src="./images/icon_bag.png" alt=""></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="gnb_box">
+        <div class="underline"> <!-- 내비게이션 긴 언더라인 -->
+        </div>
+
+        <nav class="gnb">
+          <div class="underline_mini"></div> <!-- 내비게이션 짧은 언더라인 -->
+          <ul>
+            <li>
+              <a href="#" title="메뉴" id="menu01">메뉴</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="피자">피자</a></li>
+                <li><a href="#" title="세트메뉴">세트메뉴</a></li>
+                <li><a href="#" title="스페셜하프">스페셜하프</a></li>
+                <li><a href="#" title="사이드메뉴">사이드메뉴</a></li>
+                <li><a href="#" title="음료&기타">음료&기타</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="주문하기">주문하기</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="배달주문">배달주문</a></li>
+                <li><a href="#" title="포장주문">포장주문</a></li>
+                <li><a href="#" title="E-쿠폰">E-쿠폰</a></li>
+                <li><a href="#" title="선물하기">선물하기</a></li>
+                <li><a href="#" title="마이오더">마이오더</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="이벤트">이벤트</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="이벤트">이벤트</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="멤버십&제휴">멤버십&제휴</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="멤버십혜택">멤버십혜택</a></li>
+                <li><a href="#" title="제휴할인">제휴할인</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="매장찾기">매장찾기</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="매장찾기">매장찾기</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="고객센터">고객센터</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="공지사항">공지사항</a></li>
+                <li><a href="#" title="고객의 소리">고객의 소리</a></li>
+                <li><a href="#" title="자주찾는 질문">자주찾는 질문</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="회사소개">회사소개</a>
+              <ul class="gnb_sub">
+                <li><a href="#" title="브랜드소개">브랜드소개</a></li>
+                <li><a href="#" title="가맹점모집">가맹점모집</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- 메인영역 시작 -->
+    <main>
+      <!-- 1. 메인 슬라이드 -->
+      <article class="slide">
+        <h2>슬라이드</h2>
+        <!-- Swiper -->
+        <div class="swiper mainslide">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/slide_1.png" alt="슬라이드 이미지"></div>
+            <div class="swiper-slide"><img src="./images/slide_2.png" alt="슬라이드 이미지"></div>
+            <div class="swiper-slide"><img src="./images/slide_3.png" alt="슬라이드 이미지"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div id="search_box">
+          <div class="search">
+            <div id="search_cont">
+              <p>피자여행 어디로 갈까?</p>
+              <p>여행지</p>
+              <select name="city" id="city" class="city_box">
+                <option value="">시/도 선택</option>
+                <option value="서울특별시">서울특별시</option>
+                <option value="경기도">경기도</option>
+                <option value="강원도">강원도</option>
+              </select>
+              <select name="district" id="district" class="city_box">
+                <option value="">상세지역 선택</option>
+                <option value="마포구">마포구</option>
+                <option value="동두천시">동두천시</option>
+                <option value="종로구">종로구</option>
+              </select>
+              <button class="btn_1">
+                검색하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mainslide", {
+          autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
+
+      <!-- 2. 배달 / 포장 / 마이오더 -->
+      <section id="order">
+        <h2>배달섹션</h2>
+        <div class="order_icon">
+          <a href="#" title="배달주문">
+            <img src="./images/order_1.png" alt="배달주문">
+            <p>배달주문</p>
+          </a>
+        </div>
+        <div class="line"></div>
+        <div class="order_icon">
+          <a href="#" title="포장주문">
+            <img src="./images/order_2.png" alt="포장주문">
+            <p>포장주문</p>
+          </a>
+        </div>
+        <div class="line"></div>
+        <div class="order_icon">
+          <a href="#" title="마이오더">
+            <img src="./images/order_3.png" alt="마이오더">
+            <p>마이오더</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3. 베스트 인기메뉴 -->
+      <section id="best">
+        <h2>베스트 인기메뉴</h2>
+        <!-- Swiper -->
+        <div class="swiper bestmenu">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_1.png" alt="베이컨 피자" class="pizza"><p>베이컨 피자</p>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_2.png" alt="불고기 피자" class="pizza"><p>불고기 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_3.png" alt="콤비네이션 피자" class="pizza"><p>콤비네이션 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_4.png" alt="페퍼로니 피자" class="pizza"><p>페퍼로니 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_5.png" alt="베이컨 피자" class="pizza"><p>베이컨 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_6.png" alt="불고기 피자" class="pizza"><p>불고기 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_7.png" alt="콤비네이션 피자" class="pizza"><p>콤비네이션 피자</p></a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#">
+                <img src="./images/good.png" alt="엄지손가락" class="icon_good"><img src="./images/best_8.png" alt="페퍼로니 피자" class="pizza"><p>페퍼로니 피자</p></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-btn">
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".bestmenu", {
+            slidesPerView: 4,
+            spaceBetween: 60,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+      </section>
+      
+      <!-- 4. 공지사항 -->
+      <section id="notice">
+        <h2>공지사항</h2>
+        <!--공지사항-->
+        <div class="noticebox">
+          <div>
+            <div class="notice_title">NOTICE</div>
+            <span>
+              <a href="#">
+                  <img src="./images/icon_more.png" alt="공지사항 더보기" title="공지사항 더보기">
+              </a>
+            </span>
+            <ul>
+                <li>피자알볼로 홈페이지 리뉴얼 안내<span>2024.04.05</span></li>
+                <li>고객센터 운영시간 변경 안내<span>2023.12.18</span></li>
+                <li>신제품 '영천마늘 불고기피자' 관련하여 안내드립니다.<span>2023.07.24</span></li>
+                <li>주문량 증가로 인한 일시적 서버 이슈 안내<span>2023.07.20</span></li>
+            </ul>
+          </div>
+        </div>
+        <!--제휴배너-->
+        <div class="banner_01">
+          <a href="#">
+          <img src="./images/banner_1.png" alt="제휴배너" title="제휴배너">
+          </a>
+          <span>
+            <a href="#" title="제휴할인 더보기">
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </span>
+        </div>
+      </section>
+
+      <!-- 5. 이벤트 -->
+      <section id="event">
+        <div>
+          <div class="event_head">이벤트</div>
+          <span>
+              <a href="#">+ VIEW MORE</a>
+          </span>
+        </div>
+        <div class="total_box">
+          <div class="eventbox">
+              <div class="event_con">
+                  <div>
+                    <img src="./images/event_1.png" alt="이벤트">
+                  </div>
+                  <p class="event_on">진행중</p>
+                  <p class="eventtitle">[이벤트] 마라 사이드 신메뉴 출시기념 할인</p>
+                  <p class="eventperiod">[2024-04-09 ~ 2024-04-14]</p>
+              </div>                        
+          </div>
+          <div class="eventbox">
+            <div class="event_con">
+                <div>
+                  <img src="./images/event_2.jpg" alt="이벤트">
+                </div>
+                <p class="event_on">진행중</p>
+                <p class="eventtitle">[이벤트] 거꾸로 가는 가격 최대 6,500원 할인</p>
+                <p class="eventperiod">[2024-04-09 ~ 2024-04-14]</p>
+            </div>                        
+          </div>
+          <div class="eventbox">
+            <div class="event_con">
+                <div>
+                  <img src="./images/event_3.png" alt="이벤트">
+                </div>
+                <p class="event_on">진행중</p>
+                <p class="eventtitle">[이벤트] BT21 도토희망피자 역대급 이벤트</p>
+                <p class="eventperiod">[2024-04-09 ~ 2024-04-14]</p>
+            </div>                        
+          </div>
+          <div class="eventbox">
+            <div class="event_con">
+                <div>
+                  <img src="./images/event_4.png" alt="이벤트">
+                </div>
+                <p class="event_on">진행중</p>
+                <p class="eventtitle">[이벤트] 피자알볼로와 함께 응원해요 이벤트</p>
+                <p class="eventperiod">[2024-04-09 ~ 2024-04-14]</p>
+            </div>                        
+          </div>
+          <div class="eventbox">
+            <div class="event_con">
+                <div>
+                  <img src="./images/event_5.png" alt="이벤트">
+                </div>
+                <p class="event_on">진행중</p>
+                <p class="eventtitle">[이벤트] 연말시즌 5종 할인쿠폰 득템찬스</p>
+                <p class="eventperiod">[2024-04-09 ~ 2024-04-14]</p>
+            </div>                        
+          </div>
+        </div>
+        <h2>이벤트</h2>
+      </section>
+
+    </main>
+
+    <!-- 푸터영역 시작 -->
+    <footer id="footer">
+      <div class="footer-area">
+        <div class="inner-box">
+          <div class="footer-order">
+            <img src="./images/logo.png" alt="로고이미지">
+            <span class="tel">1688-8495</span>
+          </div>
+    
+          <ul class="footer-contact">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">가맹점모집</a></li>
+          </ul>
+    
+          <div class="footer-info">
+            <p>법인명 : ㈜ALVOLO F&C&nbsp;&nbsp;|&nbsp;&nbsp;대표자 : 이재욱&nbsp;&nbsp;|&nbsp;&nbsp;사업자번호 : 117-81-73358</p>
+            <p>통신판매번호 : 제2015-서울양천-0524호&nbsp;&nbsp;|&nbsp;&nbsp;서울시 양천구 목동로 232 </p>
+            <p>전화 : 02-2645-8495&nbsp;&nbsp;|&nbsp;&nbsp;팩스 : 02-2604-5171</p><br>
+            <p>Copyright ⓒ Pizza Alvolo All rights reserved.</p>
+          </div>
+    
+          <div class="footer-cont">
+            <select name="family_site" id="family_site">
+              <option value="">Family Site</option>
+              <option value="#">사장님 사이트</option>
+              <option value="#">브랜드 소개</option>
+              <option value="#">가맹점 모집</option>
+            </select>
+    
+            <dl class="app-box">
+              <dt>DOWNLOAD APP</dt>
+              <dd>
+                <a href="#" title="ios 앱다운로드"><i class="fa-brands fa-apple"></i></a>
+                <a href="#" title="안드로이드 앱다운로드"><i class="fa-brands fa-google-play"></i></a>
+              </dd>
+            </dl>
+    
+            <div class="sns-box">
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 탑 버튼 -->
+      <a href="#" title="상단으로 바로가기" class="top_btn"><i class="fas fa-angle-up"></i><p>TOP</p></a>
+    </footer>
+  </form>
+
+  <script>
+
+  //window객체
+  let scrollTop;
+  const t_btn = document.getElementsByClassName('top_btn');
+
+  window.addEventListener('scroll',function(){
+    scrollTop = window.scrollY;
+    console.log(scrollTop);
+
+    //출력방법 4가지
+    console.log(scrollTop);
+
+    //만약에 세로스크롤 값이 900픽셀 이상인 경우라면
+    if(scrollTop>=900){
+    t_btn.classList.add('act');
+    }else{
+    //그렇지 않은 경우
+    t_btn.classList.remove('act'); //클래스 서식을 제거한다.
+    }
+  })
+
+
+
+  </script>
+</body>
+</html>

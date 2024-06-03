@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_핑크하우스_공지사항</title>
+  <style>
+    /* 표 라인 및 배경색 폰트 설정*/
+    .t01{
+      border-collapse: collapse;
+      width: 800px;
+    }
+    .t01 th, .t01 td{
+      border-bottom: 1px dashed #888;
+      text-align: center;
+      padding: 6px;
+    }
+    .t01 thead{
+      border-top: 4px solid #ff6397;
+      border-bottom: 2px solid #ff6397;
+      background-color: pink;
+      font-weight: bold;
+    }
+    .t01 th{
+      padding: 8px;
+      color: white;
+    }
+
+    /* 열 목록 별 폰트 설정 */
+    .t01 td:nth-child(1){
+      color: #888;
+    }
+    .t01 td:nth-child(2){
+      text-align: left;
+      color: #3c5cb4;
+    }
+    .t01 td:nth-child(3){
+      color: #3b3b3b;
+      font-weight: bold;
+    }
+    .t01 td:nth-child(4){
+      color: #a0a0a0;
+    }
+    .t01 td:nth-child(5){
+      color: #a0a0a0;
+    }
+
+    /* 하단 검색 바 설정 */
+    .t01 .search_01{
+      padding: 20px;
+      text-align: center;
+    }
+    #select{
+      width: 150px;
+      font-size: 16px;
+      margin: 0 4px;
+    }
+    #i01{
+      width: 200px;
+      font-size: 18px;
+      margin: 0 4px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <form action="받을서버주소" name="search" method="post"> <!-- 이걸 적어야 폼이 서버로 제출이 됨 -->
+  <table class="t01">
+    <caption></caption>
+      <thead>
+      <tr>
+        <th>NO.</th>
+        <th>SUBJECT</th>
+        <th>WRITER</th>
+        <th>DATE</th>
+        <th>HIT</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7</td>
+          <td><a href="#">[필독] 핑크 하우스 회원 혜택</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><a href="#">[안내] 생일 축하 쿠폰 및 적립금 안내</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><a href="#">[안내] 핑크 하우스 무료 배송 안내</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><a href="#">[필독] 배송사 및 처리 확인</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="#">[필독] 카드 무이자 할부 행사 안내</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="#">[안내] 핑크 하우스 오프라인 매장 안내</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><a href="#">[필독] 핑크 하우스 등급제 안내</a></td>
+          <td>관리자</td>
+          <td>05-29</td>
+          <td>2</td>
+        </tr>
+
+
+        <tr>
+          <td colspan="5" class="search_01">
+              <select id="select">
+                <option value="">제목</option>
+                <option value="">작성자</option>
+                <option value="">내용</option>
+              </select>
+              <input type="text" maxlength="20" id="i01">
+              <input type="submit" id="i02">
+              <label class="r01"><input type="radio" name="choice">and</label>
+              <label class="r01"><input type="radio" name="choice">or</label>
+
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</form>
+</body>
+</html>

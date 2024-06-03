@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* style.css */
+/* 공통서식 */
+*{margin: 0;padding: 0;}
+body{
+  line-height: 24px;
+}
+h2, h3, p{
+  padding: 15px;
+  font-weight: bold;
+}
+ul{
+  width: 800px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: #ccc;
+}
+ul > li{
+  background-color: yellow;
+  border: 1px solid red;
+  list-style: none;
+  width: 180px;
+  line-height: 60px;  /* 글씨 위아래에 줄간격(공백)을 줘서 결과적으로 글씨를 세로로 가운데정렬을 해줌 */
+}
+
+/* 1번 방식으로 가로배치 */
+/* - 장점 : 가로방향배치 */
+/* - 단점 : 블럭요소가 아니므로 크기값이 사라진다.(패딩값으로 크기 지정 가능) */
+/* - 단점2 : 인라인 성격도 가지기 때문에 약간의 틈이 생긴다. */
+.list01{
+  font-size: 0;
+  text-align: center;
+}
+.list01 > li{
+  display: inline;
+  padding: 20px 120px 20px 0px;
+  font-size: 16px;
+}
+
+/* 2번 방식으로 가로배치 */
+/* - 장점 : 가로방향배치, 크기값 유지 */
+/* - 단점 : 인라인 성격도 가지기 때문에 약간의 틈이 생긴다. */
+.list02{
+  text-align: center;
+}
+.list02 > li{
+  display: inline-block;
+}
+
+/* 3번 방식으로 가로배치 */
+/* - 장점 : 가로방향배치, 여백이 안생김 */
+/* - 단점 : 부모가 자식의 영역을 인식하지 못함 */
+/* - 단점2 : 아래의 다른 요소가 현재의 영역을 침범함 */
+/* <해결방법 1> float속성을 적용한 요소의 다음 요소에 clear속성을 적용한다. (다음 요소가 제자리를 찾아감) */
+/* <해결방법 2> ul::after{display:block; clear:both; content:"";} 속성을 주어서 부모높이 해결 */
+.list03{}
+.list03::after{   /* 부모요소한테 가상의 속성을 줌 */
+  display: block;
+  clear: both;  /* flex 속성을 쓰면 초기화해줘야함 */
+  content: "";
+}
+.list03 > li{
+  float: left;
+  margin: 0 8px 0 8px;
+}
+
+/* 4번 방식으로 가로배치 */
+/* - 장점 : 완벽한 수평, 수직 정렬, 여백이 있어서 레이아웃이 깨지지 않음, 부모높이가 살아있음 */
+/* - 단점 : MS사의 웹브라우저 IE10이하에서는 인식이 안됨. */
+/* - flex 참조 사이트 : https://studiomeal.com/archives/197 */
+.list04{
+  display: flex;
+  justify-content: space-around;   /* 이 속성으로 여백조정 가능 */
+}
+
+/* 5번 방식으로 가로배치 */
+/* - 장점 : display:flex속성보다 가로, 세로배치가 잘된다.(2차원) */
+/* - 단점 : 속성의 종류가 너무 많아서 복잡한 면이 있다. */
+.list05{
+  display: grid;
+  grid-template-columns: repeat(4, auto);   /* auto auto auto auto; */
+  /* grid-template-rows: repeat(4, auto); 줄개수 */
+}

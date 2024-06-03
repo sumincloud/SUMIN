@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css선택자의 우선순위 p.239</title>
+  <style>
+    span{color: red !important;}
+    .txt01{color: blue;}
+    #txt02{color: green}
+  </style>
+</head>
+<body>
+  <h2>css선택자의 우선순위 - 명시도 p.239</h2>
+  <p>css는 서식을 적용할 때 첫줄부터 적용하고, 아래줄에 있는 서식을 순차적으로 내려가면서 적용한다. 이것을 cacading이라고 하며, 만약 부모태그에 서식이 적용되어 있다면 부모의 서식을 기준으로 상속받아 아래 요소가 서식이 적용되는데, 이런 우선순위 규칙을 스타일 오버로딩(style overloading)이라고 한다.</p>
+
+  <h3>선택자의 우선순위</h3>
+  <p>!important(10,000) > inline(1,000) > #id(100) > .class(10) > tag(1) > 외부스타일 서식 순으로 적용</p>
+
+  <img src="./images/point01.jpg" alt="선택자 점수">
+
+  <h3>선택자 우선순위 예)</h3>
+  <span class="txt01" id="txt02">글자색상 변경하기</span>
+
+  <p>예1) ul#primary-nav li.active은 명시도 몇점?  112점</p>
+          <!-- 1 + 100 + 1 + 10 = 112 -->
+  <p>예1) p > span {color:blue;} 와 div span{color:red;}은 명시도 몇점?  2점</p>
+          <!-- 둘 다 1 + 1 = 2점 -->
+
+
+  
+</body>
+</html>

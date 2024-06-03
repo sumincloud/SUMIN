@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+:root{
+  --color01:#333;
+}
+/* layout.css */
+body{
+  font-family: "맑은 고딕", arial, sans-serif;
+  font-size:13px;
+  color:var(--color01);
+  overflow-X: hidden;
+}
+a{
+  color:var(--color01);
+  text-decoration: none;
+}
+
+header{
+  width:150px;
+  height:100%;
+  position:fixed;
+  left:0px;top:0px;
+  background-color:rgba(0,0,0,.8);
+  z-index:100;
+}
+
+header h1{
+  color:#fff;text-align:center;
+  padding-top:100px;
+  font-size:30px;
+}
+.gnb{
+  padding-top:200px;
+  padding-left:10px;
+}
+.gnb li{line-height:40px;}
+.gnb li a{
+  color:#fff;
+  font-size:18px;
+  font-weight:normal;
+  text-transform: uppercase;
+  transition:0.5s;
+}
+
+.gnb li a.on{
+  font-size: 20px !important;
+  font-weight: bold;
+}
+.gnb li:nth-child(1) a.on{color: skyblue;}
+.gnb li:nth-child(2) a.on{color: red;}
+.gnb li:nth-child(3) a.on{color: orange;}
+.gnb li:nth-child(4) a.on{color: cyan;}
+
+/* 메인서식 */
+#cont{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;height: 400vh;
+}
+#cont section{
+  width: 100%;height: 100vh;
+  background-position: right center;
+  position: relative;
+}
+#cont section h2{
+  font-size: 24px;
+  position: absolute;
+  left: 180px;
+  top: 200px;
+}
+#cont section p{
+  position: absolute;
+  left: 180px; top: 250px;
+  background: rgba(255,255,255,0.6);
+  width: 400px;font-size: 15px;
+  padding: 10px;line-height: 30px;
+  text-align: justify;
+  text-indent: 10px;
+}
+#cont section p::first-letter{
+  font-weight: bold;font-size: 30px;
+}
+
+#sect1 h2{color: skyblue;}
+#sect2 h2{color: red;}
+#sect3 h2{color: orange;}
+#sect4 h2{color: cyan;}
+#sect1{background-image: url(../images/cooper.jpg);}
+#sect2{background-image: url(../images/tesla.jpg);}
+#sect3{background-image: url(../images/lamborghini.jpg);}
+#sect4{background-image: url(../images/porsche.jpg);}
+
+/* 푸터서식 */
+footer{
+  position: fixed; bottom: 0px;left: 150px;
+  width: calc(100% - 150px);
+  background: rgba(0,0,0,.8);
+  color: white;
+  text-align: center;line-height: 50px;
+
+}
+
+#sPos{
+  position: fixed;
+  right: 100px;
+  top:100px;
+  font-size: 50px;
+  color: yellow;
+}

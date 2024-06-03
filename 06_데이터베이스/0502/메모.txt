@@ -1,0 +1,6 @@
+CREATE TABLE goods_low AS(SELECT * FROM goods where g_cost < (select avg(g_cost) from goods));
+CREATE TABLE goods_up AS(SELECT * FROM goods where g_cost > (select avg(g_cost) from goods));
+
+UPDATE goods set g_name = (SELECT g_name from goods where g_code=57), g_cost=(SELECT g_cost from goods where g_code=57) where g_code=10;
+
+DELETE FROM orders WHERE g_code in (SELECT g_code from goods where g_name like '%만두%');

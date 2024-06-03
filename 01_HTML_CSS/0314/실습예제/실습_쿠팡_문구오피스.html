@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_쿠팡_문구오피스</title>
+  <style>
+    *{
+      margin: 0; /* 브라우저에서 설정한 마진값 16을 없앤다 */
+      padding: 0;  /* 브라우저에서 설정한 패딩값을 초기화 */
+    }  
+
+    .cate_01{
+      width: 470px;height: 600px;
+      position: relative;
+    }
+
+    .cate_01 > .product_img{
+      position: absolute;
+      right: 0px; top: 0px;
+    }
+
+    dd > a{
+      border: 1px solid #ccc;
+      padding: 0px 10px;
+      font-size: 12px;
+      line-height: 28px;
+      margin-top: 6px;
+      display: block;   /* 블럭요소로 만듦 */
+      text-align: center;
+      float: left;  /* 왼쪽 정렬..? 글씨 크기에 맞게 border 사이즈 왼쪽으로 줄임*/
+      text-decoration: none;
+      color: #97563e;
+    }
+
+    dl{
+      position: absolute;
+      bottom: 0px;
+      padding: 22px 10px;
+    }
+
+    .cate_01{
+      border-top: 2px solid #97563e;
+      border-bottom: 2px solid #97563e;
+    }
+
+    .title{
+      padding: 40px 0 0 22px;
+    }
+
+    .title h2{
+      color: #97563e;
+      font-family: "맑은 고딕";
+      font-size: 30px;
+    }
+    .title a{
+      color: #888888;
+      font-size: 11px;
+      text-decoration: none;
+    }
+
+    dd > a:hover{
+      background-color: #97563e;
+      color: white;
+      border: 1px solid #97563e;
+    }
+
+
+
+
+    /* #97563e */
+  </style>
+</head>
+<body>
+  <div class="cate_01">
+    <div class="title">
+      <h2>문구<br>오피스</h2>
+      <a href="#" title="바로가기">바로가기 &#x003E;</a>
+    </div>
+
+    <dl>
+      <dt><b>HOT키워드</b></dt>
+      <dd><a href="#" title="A4용지">&#x0023;A4용지</a></dd>
+      <dd><a href="#" title="필통">&#x0023;필통</a></dd>
+      <dd><a href="#" title="샤프">&#x0023;샤프</a></dd>
+      <dd><a href="#" title="볼펜">&#x0023;볼펜</a></dd>
+      <dd><a href="#" title="야광팔찌">&#x0023;야광팔찌</a></dd>
+      <dd><a href="#" title="독서대">&#x0023;독서대</a></dd>
+      <dd><a href="#" title="물풍선">&#x0023;물풍선</a></dd>
+      <dd><a href="#" title="색연필">&#x0023;색연필</a></dd>
+    </dl>
+
+    <a href="#" title="이미지" class="product_img"><img src="../images/product5.jpg" alt=""></a>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_폼태그</title>
+  <style>
+    #star{
+      color: red;
+    }
+
+    .t01{
+      border-top: 2px solid black;
+      border-collapse: collapse;
+    }
+    .t01 th, .t01 td{
+      border-top: 1px solid black;
+      border-collapse: collapse;
+      width: 500px;
+    }
+
+    .t01 thead {float: left;}
+    .t01 thead tr, .t01 thead tr th {display: block;}
+    
+    .t01 tbody {display: block; white-space:nowrap;}
+    .t01 tbody tr{display: inline-block;}
+    .t01 tbody tr td { display:block;}
+
+  </style>
+</head>
+<body>
+  <table class="t01">
+    <caption></caption>
+    
+    <thead>
+      <tr>
+        <th><span id="star">*</span>문의유형</th>
+        <th><span id="star">*</span>성함</th>
+        <th><span id="star">*</span>회사명</th>
+        <th><span id="star">*</span>직급</th>
+        <th><span id="star">*</span>부서명</th>
+        <th><span id="star">*</span>회사규모</th>
+        <th><span id="star">*</span>기관구분</th>
+        <th><span id="star">*</span>전화번호</th>
+        <th><span id="star">*</span>E-mail</th>
+        <th>문의제품</th>
+        <th><span id="star">*</span>방문경로</th>
+        <th>문의내용</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>제품문의</td>
+      </tr>
+    </tbody>
+
+
+  </table>
+</body>
+</html>

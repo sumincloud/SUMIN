@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_그리드 레이아웃</title>
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+  <h2>02_그리드 레이아웃</h2>
+  <p>GRID(격자)속성은 FLEX(플렉스)속성과는 다르게 두 방향(가로, 세로)으로 레이아웃을 만들기 위한 시스템이다.</p>
+  <h3>웹페이지 레이아웃 제작방법</h3>
+  <ul>
+    <li>table</li>
+    <li>float:left or right</li>
+    <li>display:inline</li>
+    <li>display:inline-block</li>
+    <li>display:block</li>
+    <li>display:table</li>
+    <li>display:flex</li>
+    <li>display:grid</li>
+    <li>다단 레이아웃(multi-column)</li>
+  </ul>
+
+  <h3>1. GRID Columns(열, 세로)</h3>
+  <img src="./images01/column.png" alt="">
+
+  <h3>2. GRID Rows(행, 가로)</h3>
+  <img src="./images01/row.png" alt="">
+
+  <h3>3. GRID Gap(여백)</h3>
+  <img src="./images01/gap.png" alt="">
+
+  <h3>4. GRID Line(기준선)</h3>
+  <img src="./images01/line.png" alt="">
+
+  <h3>5. GRID Container(부모속성)</h3>
+  <p>Grid layout에서 부모역할을 하기 위한 html태그요소이며 display:grid, display:inline-grid속성 값을 지정할 수 있다.</p>
+  <p>부모요소의 이름은 'wrap, wrapper, container', 자식요소의 이름은 'item'이라고 하며, 그리드는 column, row 아이템으로 구성된다.</p>
+
+  <h3>6. GRID Item(자식속성)</h3>
+  <p>Grid layout에서 부모요소의 자식요소들을 '아이템'이라고 하며, 아이템들을 병합하고자 할 때 열, 행번호, 영역의 이름을 따로 지정하여 설정할 수 있다.</p>
+  <p>css학습 참고사이트 - https://www.w3schools.com/css/css_grid.asp</p>
+
+  <h3>실습1. 그리드 레이아웃 기본 개념잡기</h3>
+  <section class="wrap01">
+    <article>item1</article>
+    <article>item2</article>
+    <article>item3</article>
+    <article>item4</article>
+    <article>item5</article>
+    <article>item6</article>
+    <article>item7</article>
+    <article>item8</article>
+    <article>item9</article>
+    <article>item10</article>
+    <article>item11</article>
+    <article>item12</article>
+  </section>
+
+  <h3>실습2. 그리드 레이아웃 자식요소 병합하기</h3>
+  <section class="wrap02">
+    <article class="item1">item1</article>
+    <!-- <article>item2</article> -->  <!-- 병합된 칸을 주석처리해서 지워줘야 함 -->
+    <article>item3</article>
+    <article class="item4">item4</article>
+    <article>item5</article>
+    <article class="item6">item6</article>
+    <article>item7</article>
+    <!-- <article>item8</article> -->
+    <article>item9</article>
+    <!-- <article>item10</article> -->
+    <article>item11</article>
+    <!-- <article>item12</article> -->
+  </section>
+
+  <h3>실습3. 그리드 레이아웃을 활용한 이미지 갤러리</h3>
+  <section class="wrap03">
+    <article class="item1"></article>
+    <article class="item2"></article>
+    <article class="item3"></article>
+    <article class="item4"></article>
+    <article class="item5"></article>
+    <article class="item6"></article>
+    <!-- <article>item7</article> -->
+    <!-- <article>item8</article> -->
+    <!-- <article>item9</article> -->
+    <!-- <article>item10</article> -->
+    <!-- <article>item11</article> -->
+    <!-- <article>item12</article>  -->
+
+  </section>
+  
+</body>
+</html>

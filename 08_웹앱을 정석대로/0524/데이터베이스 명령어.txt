@@ -1,0 +1,11 @@
+1. 테이블 만들기
+create table test_drive(code int(5) not null auto_increment primary key, name varchar(10), phone varchar(11), sms varchar(1), email varchar(30), region varchar(20), s_car varchar(20), my_car varchar(20), e_date date);
+
+2. 데이터 입력
+insert into test_drive values(1, '홍길동', '01011112222', '1','jeon9897@naver.com','강남점','캐스퍼', '소나타','20240524');
+
+3. 데이터 삭제
+delete from test_drive;
+
+4. 조회하기
+select * from test_drive;

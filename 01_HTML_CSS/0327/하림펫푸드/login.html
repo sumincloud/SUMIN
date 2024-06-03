@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하림펫푸드 - 로그인 페이지</title>
+  <style>
+    fieldset{
+      width: 600px; height: 500px;
+      border: 3px solid black;
+      margin: 0 auto;
+      text-align: center;
+    }
+    fieldset > legend{display: none;}
+    fieldset > h2{font-size: 28px;font-weight: 500;}
+
+    /* 아이디 비번 입력칸 */
+    #id_txt, #pw_txt{
+      width: 400px;height: 40px;
+      margin: 5px 0;
+      background: #eeeeee;
+      border: none;
+      border-radius: 5px;
+    }
+    #id_txt::placeholder, #pw_txt::placeholder{
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* 로그인 버튼 */
+    #login_btn{
+      width: 400px;
+      height: 40px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(51, 51, 51,0.5);
+    }
+
+    /* 회원가입 비번찾기 */
+    .join_search{
+      display: inline-block;
+      transform: translateX(-70px);  /* 왼쪽으로 이동시킴 */
+    }
+    .join_search > a{
+      text-decoration: none;
+      color: black;
+    }
+
+    /* 아이디 저장 */
+    .id_save{
+      display: inline-block;
+      transform: translateX(70px);  /* 오른쪽으로 이동시킴 */
+      accent-color: red;
+    }
+
+    /* 네이버 카카오 버튼 */
+    #btn_naver{
+      width: 400px;
+      height: 40px;
+      background: rgb(0, 255, 13);
+      color: black;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(51, 51, 51,0.5);
+    }
+    #btn_kakao{
+      width: 400px;
+      height: 40px;
+      background: rgb(251, 255, 0);
+      color: black;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(51, 51, 51,0.5);
+    }
+
+    /* 마우스 포인터 변경 */
+    #login_btn:hover, #btn_naver:hover, #btn_kakao:hover, #id_save:hover, .id_save > label:hover{cursor: pointer;}
+
+
+  </style>
+</head>
+<body>
+  
+  <form name="로그인 폼" method="post" action="">
+
+    <fieldset>
+      <legend>로그인 폼</legend>
+      <h2>로그인</h2>
+      <p>
+        <label for="id_txt"></label><input type="text" id="id_txt" placeholder="아이디">
+      </p>
+      <p>
+        <label for="pw_txt"></label><input type="password" id="pw_txt" placeholder="패스워드">
+      </p>
+      <p>
+        <input type="button" value="LOGIN" id="login_btn">
+      </p>
+      <p class="join_search">
+        <a href="join.html" title="회원가입">회원가입</a> &#x007C;
+        <a href="password_search.html" title="비번찾기">비번찾기</a>
+      </p>
+      <p class="id_save">
+        <input type="checkbox" id="id_save"><label for="id_save">아이디 저장</label>
+      </p>
+
+      <p><input type="button" value="네이버 아이디로 회원가입" id="btn_naver"></p>
+      <p><input type="button" value="카카오 아이디로 회원가입" id="btn_kakao"></p>
+    </fieldset>
+  </form>
+
+  <script>
+    //1. 변수선언
+    let id, pw;
+    const login_btn = document.getElementById('login_btn');
+
+    //2. 로그인 버튼 클릭시 해당 ID, PW값 변수에 담아서 조건식 만들기ㄴ
+    login_btn.addEventListener('click', function(){
+      id_pw_check(); //함수호출
+    });
+
+    //아이디, 패스워드 체크하는 함수
+    function id_pw_check(){
+      //alert('함수호출하기');
+      id = document.getElementById('id_txt').value;
+      pw = document.getElementById('pw_txt').value;
+
+      console.log(id); //출력확인
+      console.log(pw);
+
+      //3. 제어문을 활용하여 검증 결과 출력하기
+      if(id=='master'){
+        if(pw=='1234'){
+          alert('로그인 인증 확인');
+        }else{
+          alert('패스워드가 틀립니다. 다시 확인하세요.');
+          document.getElementById('pw_txt').value = "" //해당 값을 삭제하겠다.
+        }
+      }else{
+        alert('아이디가 틀립니다. 다시 확인하세요.');
+        location.reload(); //새로고침 효과
+      }
+      //끝
+    }
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

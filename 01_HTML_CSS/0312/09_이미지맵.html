@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+    <meta charset="utf-8">
+    <title>09_이미지 맵</title>
+ </head>
+ <body>
+    <h2>09_이미지 맵</h2>
+    <p>이미지맵이란? 하나의 이미지에 여러개의 맵(사각형, 원형, 다각형)을 만들어서 링크를 걸 수 있는 기능.</p>
+    <p>작성법) map name="맵이름", area shape="rect, circle, polyon" coords="좌표값"</p>
+
+    
+     <img src="./images/total_book.jpg" alt="책목록" usemap="#book">
+ 
+     <map name="book">
+       <area shape="rect" coords="8,10,120,156" href="https://product.kyobobook.co.kr/detail/S000001771113" title="물이 되는 꿈" alt="물이 되는 꿈">
+       <area shape="rect" coords="8,10,120,156" href="https://product.kyobobook.co.kr/detail/S000001771113" title="물이 되는 꿈" alt="물이 되는 꿈">
+       <area shape="rect" coords="8,10,120,156" href="https://product.kyobobook.co.kr/detail/S000001771113" title="물이 되는 꿈" alt="물이 되는 꿈">
+       <area shape="rect" coords="8,10,120,156" href="https://product.kyobobook.co.kr/detail/S000001771113" title="물이 되는 꿈" alt="물이 되는 꿈">
+     <map>
+
+    <dl>
+      <dt>이미지 맵 사용순서</dt>
+      <dd>1. 그림판, 포토샵, 일러스트를 실행하여 이미지를 불러온다.</dd>
+      <dd>2. 맵을 만들고자 하는 위치에 마우스 오버하여 좌표값을 메모한다. (9,12,113,153) </dd>
+      <dd>3. 이미지 태그로 이미지를 삽입하고 map태그로 연결하여 하이퍼링크를 건다.</dd>
+      <dt>이미지 맵 태그를 자동으로 생성해주는 사이트</dt>
+      <dd>https://www.image-map.net</dd>
+    </dl>
+      
+    <img src="../0311/images/main_item1.jpg" usemap="#image-map">
+
+    <map name="image-map">
+      <area target="" alt="쿠팡" title="쿠팡" href="http://www.coupang.co.kr" coords="31,4,157,202" shape="rect">
+    </map>
+   
+ </body>
+</html>
+
+
+
+
+
+
+
+
+

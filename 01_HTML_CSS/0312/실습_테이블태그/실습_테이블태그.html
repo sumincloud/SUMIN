@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_테이블태그</title>
+	<style>
+		body{
+			font-family: "맑은 고딕", Arial, sans-serif;
+			font-size: 14px;
+			color: #333333;
+		}
+		table{
+			width: 800px;
+			border-top: 2px solid #333333;
+			border-bottom: 2px solid #cccccc;
+			border-collapse: collapse;
+		}
+		th, td{
+			border: 1px solid #cccccc;
+			text-align: center;
+			line-height: 160%;   /* 160%이 기본값이다. */
+		}
+		th{
+			background-color: rgb(235, 235, 235);
+		}
+		
+		/* 표의 왼쪽 오른쪽 선 없애기 */
+		tr th:first-child{border-left: none;}
+		tr th:last-child{border-right:none}
+
+		tr td:first-child{border-left: none;}
+		tr td:last-child{border-right:none}
+
+		/* 두번째 칸에 내용들만 왼쪽정렬 */
+		tr td:nth-child(2){text-align: left;}
+
+	</style>
+</head>
+<body>
+  <h3>실습_테이블태그</h3>
+  <table>
+		<caption></caption>
+		<thead>
+			<tr>
+				<th scope="row">순번</th>  <!-- scope="row" : 가로방향으로 읽어줌 (col : 세로방향) -->
+				<th scope="row">제목</th>
+				<th scope="row">담당부서</th>
+				<th scope="row">첨부</th>
+				<th scope="row">등록일</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>222</td>
+				<td>입지기준확인신청서(홍길동)</td>
+				<td>경제과</td>
+				<td><img src="./hwp.gif" alt="hwp파일"></td>
+				<td>2014-12-17</td>
+			</tr>
+			<tr>
+				<td>221</td>
+				<td>창업사업계획승인서식</td>
+				<td>경제과</td>
+				<td><img src="./zip.gif" alt="zip파일"></td>
+				<td>2014-12-17</td>
+			</tr>
+			<tr>
+				<td>220</td>
+				<td>공장신설등승인신청서서식</td>
+				<td>경제과</td>
+				<td><img src="./zip.gif" alt="zip파일"></td>
+				<td>2014-12-17</td>
+			</tr>
+			<tr>
+				<td>219</td>
+				<td>공장등록(변경)신청서서식</td>
+				<td>경제과</td>
+				<td><img src="./zip.gif" alt="zip파일"></td>
+				<td>2014-12-17</td>
+			</tr>
+		</tbody>
+  </table>
+</body>
+</html>

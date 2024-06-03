@@ -1,0 +1,114 @@
+데이터베이스 시작 mysql -u root -p1234
+데이터베이스 종료 exit
+
+1. DDL(데이터 정의어)
+   create(생성), alter(수정), drop(삭제)
+2. DML(데이터 조작어)
+   insert, update, delete, select 등
+
+데이터베이스 조회: show databases;
+데이터베이스 생성: create database 데이터베이스명;
+데이터베이스 선택: use 데이터베이스명;
+데이터베이스 삭제: drop database 데이터베이스명;
+테이블 조회 : show 테이블명;
+테이블 생성 : create 테이블명;
+
+실습예제-테이블 생성)
+create table customer(c_name varchar(20), c_address varchar(100), c_tel varchar(50));
+
+실습예제-데이터입력
+insert into customer values('레스토랑가야', '강남구 역삼동 3번지', '02-1258-9956');
+insert into customer values ('카페신라', '강남구 역삼4동 1번지', '02-1258-1313');
+insert into customer values ('서강대교식당', '강남구 역삼5동 6번지', '02-1258-1315');
+insert into customer values ('부바레스토랑', '송파구 문정동 8번지', '02-1258-6666');
+insert into customer values ('동경반점', '강남구 역삼8동 1번지', '02-1258-4321');
+
+데이터 조회
+select * from customer;
+
+데이터 수정하기
+update customer set c_tel='02-1258-1313' where c_tel='02-1258-1315';
+------------------------------------------------------------------------------------------------
+테이블 생성하기(상품정보)
+CREATE TABLE goods (g_code int(11),  g_name varchar(20),  g_cost int(11));
+
+데이터 입력하기
+insert into goods values (10, '만두세트', 300);
+insert into goods values (12, '해물국수세트', 880);
+insert into goods values (15, '냉동한식세트', 750);
+insert into goods values (22, '중국식만두', 200);
+insert into goods values (25, '꼬마만두', 250);
+insert into goods values (36, '보리빵', 300);
+insert into goods values (57, '녹차', 50);
+insert into goods values (68, '우롱차', 80);
+
+insert into goods (g_code, g_name, g_cost) values (10, '만두세트', 300), (12, '해물국수세트', 880);
+
+데이터 조회하기   *(모든자료)
+select * from goods;    
+select g_code, g_name from goods;(원하는 필그명만 검색)
+-------------------------------------------------------------------------
+테이블 생성하기(주문정보)
+create table orders (o_day varchar(20), c_name varchar(20), g_code int(11), o_num int(11));
+
+테이블 데이터 입력하기
+insert into orders values ('24-03-01', '부바레스토랑', 10, 10);
+insert into orders values ('24-03-02', '레스토랑가야', 22, 12);
+insert into orders values ('24-03-02', '동경반점', 15, 12);
+insert into orders values ('24-03-03', '서강대교식당', 68, 4);
+insert into orders values ('24-03-04', '부바레스토랑', 57, 15);
+insert into orders values ('24-03-05', '동경반점', 25, 21);
+insert into orders values ('24-03-06', '카페신라', 36, 6);
+insert into orders values ('24-03-07', '서강대교식당', 15, 12);
+insert into orders values ('24-03-08', '부바레스토랑', 36, 13);
+insert into orders values ('24-03-09', '레스토랑가야', 22, 8);
+insert into orders values ('24-03-10', '동경반점', 22, 10);
+insert into orders values ('24-03-12', '부바레스토랑', 57, 5);
+insert into orders values ('24-03-12', '서강대교식당', 15, 3);
+insert into orders values ('24-03-12', '서강대교식당', 10, 12);
+
+//등록된 테이블 데이터 조회하기(출력하기)
+select * from orders;
+select * from goods;
+select * from customer;
+
+//1. 상품이름 '만두'라는 글자가 들어간 상품명 출력하기
+select g_name 상품명 from goods where g_name like '%만두%';
+
+//2. 주문정보 테이블에서 '레스토랑' 글자가 들어간 '날짜(o_day)', '이름(c_name)'을 출력하기
+select o_day 주문일, c_name 상호명 from orders where c_name like '%레스토랑%';
+select o_day 주문일, c_name 상호명 from orders where c_name like '%레스토랑';
+select o_day 주문일, c_name 상호명 from orders where c_name like '레스토랑%';
+
+//3. 고객테이블(customer)에서 역삼동에 위치한 상호명, 주소, 전화번호를 이름순으로 출력하시오.
+select c_name 상호명, c_address 주소, c_tel 전화번호 from customer where c_address like '%역삼동%' order by c_name;
+
+//4. orders 테이블에서 주문 수량이 10개 이상인 주문한 상호명을  중복없이(distinct) 출력하시오.
+select distinct c_name 상호명 from orders where o_num >=10;
+
+//5. orders 테이블에서 주문자가 주문한 상품의 총판매금액을 출력하시오.
+select o.c_name 주문자, g.g_name 상품명 from orders o, goods g;
+
+select sum(o_num*g_cost) 총판매금액 from orders o inner join goods g on g.g_code=o.g_code where o.c_name='카페신라';   //결과 1800
+
+//6. 주문테이블에서 주문날짜와 상호명을 출력하시오.
+//7. goods 테이블에서 가격합계를 출력하시오. 2810
+//8. orders 테이블에서 주문정보의 개수를 출력하시오. 14
+
+//정답은 화면 캡쳐해서 카페 php&sql게시판에 업로드....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       

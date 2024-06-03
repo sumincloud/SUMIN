@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* 기본스타일 3가지(폰트, 색상, 링크) */
+
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+
+/* @font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+body{
+  font-family: "SpoqaHanSansNeo-Regular", sans-serif, arial;
+  color: #222;
+  letter-spacing: 0.03em;
+}
+a{
+  color: #222;
+  text-decoration: none;
+}
+
+
+
+/* Swiper 스타일 서식 */
+.swiper{
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide{
+text-align: center;
+font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.swiper-slide img{
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.swiper-button-next, .swiper-button-prev{
+  transform: translateY(30px);
+}
+
+/* 마크업 수정사항 */
+#order > h2{display: none;}
+#notice > h2{display: none;}
+#event > h2{display: none;}

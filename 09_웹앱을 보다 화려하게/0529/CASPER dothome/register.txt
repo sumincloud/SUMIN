@@ -1,0 +1,59 @@
+register
+
+    <?php }else{  //로그인 세션이 있는 경우 로그인 완료 화면이 나와야 함.?>
+      <h2>로그인을 환영합니다.</h2>
+
+      <?php
+        $mb_id = $_SESSION['ss_mb_id'];
+
+        $sql = "select * from member where mb_id = TRIM('$mb_id')"; //아이디 조회
+        $result = mysqli_query($conn, $sql); //조회한 결과를 변수에 담고
+        $mb = mysqli_fetch_assoc($result); //회원정보를 반복문을 통해 변수에 저장한다.
+
+        mysqli_close($conn); //데이터베이스 접속종료
+      
+      ?>
+
+      <table>
+        <tr>
+          <th>아이디</th>
+          <td><?php echo $mb['mb_id']?></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td><?php echo $mb['mb_name']?></td>
+        </tr>
+        <tr>
+          <th>이메일</th>
+          <td><?php echo $mb['mb_email']?></td>
+        </tr>
+        <tr>
+          <th>성별</th>
+          <td><?php echo $mb['mb_gender']?></td>
+        </tr>
+        <tr>
+          <th>직업</th>
+          <td><?php echo $mb['mb_job']?></td>
+        </tr>
+        <tr>
+          <th>관심언어</th>
+          <td><?php echo $mb['mb_language']?></td>
+        </tr>
+        <tr>
+          <th>회원가입일</th>
+          <td><?php echo $mb['mb_datetime']?></td>
+        </tr>
+        <tr>
+          <th>회원정보 수정일</th>
+          <td><?php echo $mb['mb_modify_datetime']?></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <a href="./php/register.php?mode=modify" title="회원정보 수정">회원정보 수정</a>
+            <a href="./php/logout.php" title="로그아웃">로그아웃</a>
+          </td>
+        </tr>
+      </table>
+
+    
+    <?php }?>

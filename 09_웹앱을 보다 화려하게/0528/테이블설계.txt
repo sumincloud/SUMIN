@@ -1,0 +1,63 @@
+보통 php는 변수를 선언과 동시에 사용을 합니다. 
+
+$name = '이름';
+<?php [$name] ?>
+
+하지만 php 5.x이상부터 변수 선언에 대해 조금 더 엄격해 졌습니다. 굳이 변수 초기화를 하지 않고 바로 사용해도 상관이 없었던 때에 비해 지금은 변수 초기화 없이 사용을 하게 되면 Notice 에러가 발생됩니다.
+
+아래 내용은 php의 Notice에러를 표시하지 않도록 하는 설정입니다.
+
+error_reporting 글자를 검색하여 끝부분에 아래 글자를 추가
+
+& ~E_NOTICE
+-----------------------------------------------------------
+
+//테이블 생성
+create table member(
+ mb_no int(11) not null auto_increment,
+ mb_id varchar(20) not null default '',
+ mb_password varchar(255) not null default '',
+ mb_name varchar(255) not null default '',
+ mb_email varchar(255) not null default '',
+ mb_gender varchar(10) not null default '',
+ mb_job varchar(255) not null default '',
+ mb_language varchar(255) not null default '',
+ mb_ip varchar(255) not null default '',
+ mb_email_certify datetime not null default (current_date),
+ mb_email_certify2 varchar(255) not null default '',
+ mb_datetime datetime not null default (current_date),
+ mb_modify_datetime datetime not null default (current_date),
+ primary key (mb_no),
+ unique key mb_id (mb_id),
+ key mb_datetime (mb_datetime)
+);
+
+아래와 같이 수정 함
+CREATE TABLE member (
+ mb_no int(11) NOT NULL AUTO_INCREMENT,
+ mb_id varchar(20) NOT NULL DEFAULT '',
+ mb_password varchar(255) NOT NULL DEFAULT '',
+ mb_name varchar(255) NOT NULL DEFAULT '',
+ mb_email varchar(255) NOT NULL DEFAULT '',
+ mb_job varchar(255) NOT NULL DEFAULT '',
+ mb_gender varchar(255) NOT NULL DEFAULT '',
+ mb_language varchar(255) NOT NULL DEFAULT '',
+ mb_datetime datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY (mb_no),
+ UNIQUE KEY mb_id (mb_id),
+ KEY mb_datetime (mb_datetime)
+);
+
+--------------------------------------------------------
+기본키(primary key) - 테이블에서 가장 중심이 되는 컬럼. 반드시 not null이 되어야 함.
+다른 테이블과 연관관계에서 조인시 반드시 필요
+
+유니크키(unique key) - 테이블 필드에서 유니크한 필드만 설정 가능한 인덱스. 데이터 조회시 빠르게 검색할 수 있으며 무결성 체크에도 사용됨.
+예) 회원번호, 아이디가 있는 경우 회원번호를 기본키로 잡고 아이디를 유니크 키로 설정해놓으면 아이디의 중복등록도 방지되고, 아이디로 검색 또는 조회했을 경우 유니크 인덱스를 타기 때문에 빠르게 검색이 가능, primary key는 테이블에서 한번만 설정이 가능.
+
+
+
+
+
+
+

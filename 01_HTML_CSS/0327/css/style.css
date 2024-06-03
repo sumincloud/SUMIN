@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0;}
+
+/* 헤더서식 */
+header{
+  width: 100%;
+  height: 60px;
+  background: #ccc;
+  position: fixed; top:0px; left: 0px;
+}
+
+/* 메인서식 */
+main{
+  display: flex;
+  justify-content: space-between;
+  height: 300vh; /* viewport height (300 = 현재 디바이스 높이의 3배) */
+  padding-top: 60px;
+  padding-bottom: 150px;
+  background: beige;
+}
+#con01{
+  width: 60%;
+  height: 100vh;
+  background: green;
+}
+#con02{
+  width: 40%;
+  height: 100vh;
+  background: blue;
+  position: sticky;  /* 일정 조건까지 위치를 고정함 */
+  top: 60px; /* 60px 위치에 고정시키다가, 메인이 다 올라가면 그때 풀림 */
+}
+
+
+/* 푸터서식 */
+footer > address{
+  text-align: center;
+  font-size: 14px;
+  line-height: 100px;
+  background: #333;
+  color: white;
+  font-style: normal;
+}
+

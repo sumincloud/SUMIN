@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* main.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+*{margin: 0;padding: 0;}
+body{
+  font-family: 'Noto Sans KR', '맑은 고딕', Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+a{text-decoration: none;color: #333;}
+header h1{
+  text-align: center;
+  padding: 5px 0;
+}
+main > section h2 img{height: 70px;}
+
+.list01{}
+.list01 > li{
+  background: orange;
+  color: white;
+  line-height: 40px;
+  font-size: 1rem;
+  display: block; 
+  text-indent: 10px;
+}
+ul a{
+  display: block;
+  line-height: 40px;
+  font-size: 0.9rem;
+  text-indent: 20px;
+  transition: 0.3s;
+}
+ul a:hover{
+  text-decoration: underline;
+  background: rgb(189, 189, 189);
+}
+.sub li{
+  background: lightgray;
+}
+i.fas{
+  float: right;
+  font-size: 1.4rem;
+  padding: 10px 10px 0 0;
+}

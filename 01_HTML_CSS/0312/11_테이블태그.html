@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset = "utf-8">
+ <meta name="viewport", content="width=device-width, initial-scale=1">
+ <title>11_테이블태그</title>
+ <style>
+   .t01{border:1px solid #0000ff; border-collapse:collapse;}
+   .t01 th , .t01 td{border:1px solid #0000ff;}
+
+   .t02{border:1px solid #ff0000; border-collapse:collapse; width:200px;}
+   .t02 th , .t02 td{border:2px solid #ff0000;}
+
+   .t03{border:1px solid #00ff00; border-collapse:collapse; width:300px;}
+   .t03 th , .t03 td{border:2px solid #00ff00;}
+
+   .t04{border:3px solid #333333; border-collapse:collapse; width:600px;}
+   .t04 th , .t04 td{border:3px solid #333333;}
+ </style>
+</head>
+<body>
+ <h2>11_테이블태그</h2>
+ <p>테이블 태그는 표를 만들기 위한 태그로서 table, tr(줄,행), th(셀제목, table header), caption(설명, 제목), thead, tbody, tfoot태그로 구성되어 있다.</p>
+ <p>달력, 로그인, 회원가입, 약관내용 페이지, 문의하기 게시판, 카페 글게시판, 공지사항 게시판 등에서 많이 사용된다.</p>
+
+ <h3>1. 테이블 태그의 기본 작성법</h3>
+ <table class="t01">
+  <caption>표제목이나 설명</caption>
+  <tr>
+   <th>셀제목</th>   <th>셀제목</th>   <th>셀제목</th>
+  </tr>
+
+  <tr>
+   <td>셀데이터 내용</td><td>셀데이터 내용</td><td>셀데이터 내용</td>
+  </tr>
+ </table>
+
+ <h3>2. 테이블 셀 병합하기 - colspan, rowspan</h3>
+ <table class="t02">
+  <caption>가로줄병합(colspan)</caption>
+  <tr>
+   <td colspan="2">1줄 1칸</td>
+  </tr>
+  <tr>
+   <td>2줄 1칸</td>   <td>2줄 2칸</td>
+  </tr>
+ </table>
+
+ <table class="t03">
+  <caption>세로줄병합(rowspan)</caption>
+  <tr>
+   <td rowspan="2">1줄 1칸</td>   <td>1줄 2칸</td>
+  </tr>
+  <tr>
+   <td>2줄 2칸</td>
+  </tr>
+ </table>
+
+ <h3>3. 웹표준에 맞는 테이블 작성하기</h3>
+ <table class="t04">
+  <caption>2학년 2학기 중간고사 성적현황</caption>
+  <thead>
+  <tr>
+    <th scope="col">No.</th>  <th scope="col">성명</th>  <th scope="col">국어점수</th>  <th scope="col">수학점수</th>  <th scope="col">합계</th>
+  </tr>
+  </thead>
+
+  <tfoot>
+  <tr>
+    <td>&nbsp;</td>    <td>&nbsp;</td>    <td>230</td>    <td>240</td>    <td>&nbsp;</td>
+  </tr>
+  </tfoot>
+
+  <tbody>
+  <tr>
+    <td>1</td>     <td>홍길동</td>    <td>80</td>         <td>100</td>      <td>180</td>
+  </tr>
+  <tr>
+    <td>2</td>     <td>이순신</td>    <td>90</td>         <td>80</td>      <td>170</td>
+  </tr>
+  <tr>
+    <td>3</td>     <td>강감찬</td>    <td>60</td>         <td>60</td>      <td>120</td>
+  </tr>
+  </tbody>
+ </table>
+
+ <p>웹접근성을 위해서 tfoot를 tbody위에 올려주면 스크린리더를 통해 장애인분들이 스피커로 음성을 들을 때 표의 본문내용을 먼저 읽기 보다는 아래 내용을 먼저 읽어서 전체 내용을 빠르게 파악할 수 있기 때문에 순서를 변경해준다.</p>
+ <p>th요소에 scope속성은 가로방향(row)우선으로 읽어줄지, 세로방향(col)으로 읽어줄지를 결정하는 속성이다.</p>
+
+</body>
+</html>

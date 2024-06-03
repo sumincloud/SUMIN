@@ -1,0 +1,16 @@
+데이터베이스 문제
+1. fruit테이블에서 노랑색 과일명을 표시하는 구문을 작성하시오.
+    select f_name from fruits where f_color='yellow';   
+
+2. fruit테이블에서 과일의 이름을 오름차순으로 정렬하여 출력하는 구문을 작성하시오.
+    오름차순(asc), 내림차순(desc)
+   select * from fruits order by f_name
+
+3. fruit테이블에서 가격이 5000원 이하인 빨강색 과일명을 출력하는 구문을 작성하시오.
+   select f_name from where  f_price<=5000 and f_color='red';
+
+4. fruit테이블에서 사과의 가격을 2배로 설정하는 구문을 작성하시오.
+   update fruits set f_price=f_price*2 where f_name='사과';
+
+5. fruit테이블에서 원산지가 미국인 과일의 목록을 삭제하는 구문을 작성하시오.
+   delete from fruits where f_country='usa';

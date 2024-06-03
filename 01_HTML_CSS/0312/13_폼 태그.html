@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>13_폼 태그</title>
+</head>
+<body>
+ <h2>13_폼 태그</h2>
+ <p>폼 태그란? 사용자가 입력한 정보(아이디, 패스워드 등)를 서버로 전송하는 역할을 하며, 폼 태그를 활용한 양식의 종류에는 로그인폼, 회원가입폼, 검색폼, 예약폼 주문결제 등의 다양한 양식을 만들 수 있다.</p>
+
+ <dl>
+  <dt>폼 태그의 종류</dt>
+  <dd>form</dd>
+  <dd>input</dd>
+  <dd>select, option</dd>
+  <dd>textarea</dd>
+  <dd>label</dd>
+  <dd>button</dd>
+  <dd>fieldset</dd>
+  <dd>legend</dd>
+ </dl>
+
+ <h3>폼 태그 사용하기</h3>
+ <form name="폼 양식 이름" method="get/post" action="받을 서버주소">
+   <!--
+     get : 암호화 하지 않으며, 데이터가 많지 않은 내용일 때 사용.
+     post : 암호화를 하며, 보낼 데이터가 많을 때 사용.
+   -->
+   <fieldset>
+     <legend>폼 필드제목</legend>
+    1. 텍스트박스 : 문자를 입력하기 위한 박스로서 '아이디', '검색', '주소', '문의하기 제목'....<br>
+     <input type="text" maxlength="16">
+     <br><br>
+
+    2. 패스워드 박스 : 비밀번호, 비밀번호 확인, 주민번호, 카드번호, 개인정보 작성시 글자가 보이지 않게 '기호'로 표시되게 한다.<br>
+     <input type="password" maxlength="16">
+     <br><br>
+
+    3. 라디오 버튼 : 여러개의 항목중에 하나만 선택이 가능한 양식(약관동의, 성별선택, 열차선택, 좌석선택, 시간선택...)<br>
+     <input type="radio" name="a" id="n1"><label for="n1">동의함</label>
+     <input type="radio" name="a" id="n2"><label for="n2">동의안함</label>
+     <br><br>
+
+    4. 체크박스 : 여러개의 항목들 중에서 사용자가 원하는 항목만 선택할 수 있는 양식<br>
+      나의 취미 :
+     <input type="checkbox" id="c01"><label for="c01">음악감상</label>
+     <input type="checkbox" id="c02"><label for="c02">독서</label>
+     <input type="checkbox" id="c03"><label for="c03">컴퓨터</label>
+     <input type="checkbox" id="c04"><label for="c04">운동</label>
+     <input type="checkbox" id="c05"><label for="c05">기타</label>
+     <br><br>
+
+    5. 선택목록 : 쇼핑몰 옵션선택, 전화번호 입력, 통신사 선택, 예매목록, 인원 수, 언어설정, 패밀리사이트 등의 양식을 만들고자 할 때 사용하는 양식<br>
+     <select>
+       <option value="">언어설정</option>
+       <option value="">한국어</option>
+       <option value="">영어</option>
+       <option value="">중국어</option>
+     </select>
+  <br><br>
+
+     <select>
+       <option value="">Family Site</option>
+       <option value="">네이버</option>
+       <option value="">다음</option>
+       <option value="">네이트</option>
+     </select>
+  <br><br>
+
+   6. 다중 텍스트 박스 : 한 줄 입력이 아닌 여러 줄의 텍스트 내용을 입력하고자 할 때 사용.(게시판 게시글 작성, 이메일 내용 작성, 댓글작성..)<br>
+    <textarea cols="50" rows="10">
+
+
+    </textarea>
+  <br><br>
+
+   7. 파일첨부 : 게시판이나 이메일 양식에서 상대방에게 파일을 첨부하여 보내기 위한 양식.<br>
+    <input type="file">
+    <br>
+
+   8. 버튼 : 전송하기, 취소하기, 일반버튼, 이미지버튼<br><br>
+    <input type="submit" value="로그인하기">
+    <input type="submit" value="조회하기">
+    <input type="submit" value="전송하기">
+<br>
+    <input type="reset" value="취소하기">
+    <input type="reset" value="다시쓰기">
+<br>
+    <input type="button" value="중복확인">
+    <input type="button" value="선물하기">
+    <input type="button" value="받기">
+<br>
+    <input type="image" src="./images/n_btn.png" width=300px>
+   </fieldset>
+ </form>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>12_멀티미디어 태그</title>
+</head>
+<body>
+ <h2>12_멀티미디어 태그</h2>
+ <p>멀티미디어(multimedia) : multi+media, 영상+매체의 합성어로서 다중+매체라고 하며, 책, TV, 라디오, 신문, 잡지 등을 말하며 오늘날에는 인터넷의 비중이 많이 커졌다. 또한 사용자는 PC, TABLET, MOBILE, SMART WATCH, NOTEBOOK 기기를 통하여 정보를 접한다. </p>
+
+ <p>웹페이지를 구성하는 요소에는 문자, 이미지, 콘텐츠외에 영상이나, 사운드, 플래시 애니메이션(없어짐) 등이 멀티미디어에 속한다. 영상이나 사운드를 삽입하기 위한 태그요소를 '멀티미디어 태그'라고 한다. </p>
+
+ <p>HTML5 이전에서는 object, embed라는 태그를 사용했지만 w3c에서는 html5 웹표준에서 지정한 video, audio태그를 추가하여 표준화하였다.</p>
+
+ <h3>1. 음악파일의 종류와 삽입방법 - mp3, ogg</h3>
+ <audio src="./media/Kalimba.mp3" controls></audio>
+ <audio src="./media/Kalimba.ogg" controls></audio>
+
+ <p>음악파일의 확장자는 시스템이나 사용자 환경, 브라우저의 종류, 버전에 따라 지원이 안되는 경우가 있기 때문에 대체할 음악을 미리 넣어주거나 대체 문구를 삽입한다.</p>
+
+ <audio controls>
+  <source src="./media/Kalimba.mp3" type="audio/mp3">
+  <source src="./media/Kalimba.ogg" type="audio/mp3">
+  <p>이 브라우저에서는 지원되지 않는 콘텐츠가 있습니다. 시스템을 업그레이드 하세요.</p>
+ </audio>
+
+ <p>위 2개의 음악파일 중 우선되는 음악이 먼저 플레이 된다.</p>
+
+ <h3>2. 영상파일의 종류와 삽입방법 - mp4, webm, ogv</h3>
+ <video src="./media/Painting.mp4" controls></video>
+ <video src="./media/Painting.webm" controls></video>
+ <video src="./media/Painting.ogv" controls></video>
+
+ <p>mp4확장자는 모든 브라우저에서 잘 지원되지만 webm확장자는 익스플로러, 사파리, 안드로이드 브라우저에서는 지원이 안된다. 따라서 webm, ogb확장자 사용시 대체영상을 넣어준다.</p>
+
+ <video controls autoplay muted loop>
+  <source src="./media//Painting.mp4" type="video/mp4">
+  <source src="./media//Painting.webm" type="video/webm">
+  <p>이 브라우저에서는 지원되지 않는 콘텐츠가 있습니다. 시스템을 업그레이드 하세요.</p>
+ </video>
+
+ <ul>
+  <li>controls : 컨트롤 창 표시 옵션</li>
+  <li>autoplay : 자동실행</li>
+  <li>muted : 음소거</li>
+  <li>loop : 반복재생</li>
+ </ul>
+
+ <p>* html태그, css선택자, 속성이 브라우저별 호환성 여부 체크 site : http://caniuse.com</p>
+
+
+</body>
+</html>

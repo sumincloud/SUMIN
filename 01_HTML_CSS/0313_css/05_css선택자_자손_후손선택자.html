@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_css선택자_자손_후손선택자</title>
+  <style>
+    .wrap h4{
+      line-height: 60px;
+      border: 2px solid red;
+      width: 1200px;
+      margin: 20px auto;
+    }
+    header > h4{background-color: green;}
+    main > h4{background-color: yellow;}
+    footer > h4{background-color: #cccccc;}
+  </style>
+</head>
+<body>
+  <h2>선택자(selector)의 종류</h2>
+  <ol>
+    <li>전체 선택자(*)</li>
+    <li>클래스 선택자(.class명)</li>
+    <li>아이디 선택자(#id명)</li>
+    <li>태그 선택자(tag명)</li>
+    <li>그룹 선택자(a, b)</li>
+    <li>자손, 후손 선택자(a>b, a b)</li>
+    <li>링크, 반응 선택자</li>
+    <li>구조선택자(일반, 형태)</li>
+    <li>동위선택자</li>
+    <li>속성선택자</li>
+    <li>전, 후문자 선택자</li>
+    <li>클래스 결합, 태그와 클래스 결합</li>
+  </ol>
+
+  <h3>05_css선택자_자손_후손선택자</h3>
+  <p>html태그는 부모요소와 자손요소의 개념으로 작성이 되는데, 부모요소의 바로 아래 자손요소를 선택하고자 할 때, '자손선택자', 부모요소의 아래 자손요소를 모두 선택하고자 할 때는 '후손선택자'를 사용한다.</p>
+  <p>작성법)<br>
+    자손선택자 : A선택자 > B선택자 또는 후손선택자 : A선택자 B선택자</p>
+
+    <div class="wrap">
+      <header>
+        <h4>header의 자손입니다.</h4>
+      </header>
+
+      <main>
+        <h4>main의 자손입니다.</h4>
+      </main>
+
+      <footer>
+        <h4>footer의 자손입니다.</h4>
+      </footer>
+    </div>
+
+    <h4>제목입니다.</h4>
+
+
+
+</body>
+</html>

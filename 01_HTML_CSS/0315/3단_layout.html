@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3단_layout</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    
+    header, main, footer{
+      width: 1200px;
+      margin: 0 auto;  /* 박스를 가운데에 자동으로 배치해주는 설정 */
+    }
+    header{
+      height: 100px;
+      background-color: #ccc;
+    }
+    main{
+      background-color: yellow;
+      display: flex; /* 자식 태그들을 1차원 배열로 만들어줌(세로배치 -> 가로배치) */
+      /* flex-direction: column; */
+      margin: 10px auto;
+    }
+
+    main > section{
+      width: 700px;
+      height: 600px;
+      background-color: green;
+      /* float: left; */
+    }
+    main > article{
+      width: 270px;  /* 마진값 15*2=30만큼 300-30=270으로 줄여줘야함 */
+      height: 400px;
+      background-color: brown;
+      margin: 0 15px;
+      /* float: right; */
+    }
+
+    main > aside{
+      width: 200px;
+      height: 670px;
+      background-color: teal;
+    }
+
+    footer{
+      height: 90px;
+      background-color: #333;
+      color: white;
+      /* clear:both 상단요소에 적용된 float속성을 해제하여 원래자리로 돌아오게 함 */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    헤더영역 : 웹페이지의 상단영역으로서 로고, 검색폼, 내비게이션이 들어가는 영역이다.
+  </header>
+
+  <main>
+    <section>section : 관련있는 콘텐츠영역을 묶고자 할 때 사용하는 영역으로서 section 사용시 h2~h6요소가 나와야 한다.</section>
+    <article>
+      article : 독립적인 내용을 작성하고자 할 때 사용하는 영역으로서 section태그와 같이 h2~h6요소가 나와야 한다.
+    </article>
+    <aside>
+      aside : 메인콘텐츠의 왼쪽, 오른쪽 사이드에 배치되는 광고, 최근본상품, 상담원연결 등의 콘텐츠 작성시 사용한다. 고정배치 되는 경우도 있음.
+    </aside>
+  </main>
+
+  <footer>
+    푸터영역 : 웹페이지의 하단영역으로서 하단로고, 회사소개, 이용약관, 회사명, 주소, 연락처, 카피라이트 내용이 들어가는 영역이다.
+  </footer>
+
+</body>
+</html>

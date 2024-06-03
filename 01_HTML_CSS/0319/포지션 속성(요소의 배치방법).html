@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>포지션 속성(요소의 배치방법)</title>
+  <style>
+    .box01, .box02, .box03{
+      width: 100px;
+      height: 100px;
+    }
+    .box01{background-color: red; position: absolute; left: 50px; top: 50px; z-index: 2;}
+    .box02{background-color: green; position: absolute; left: 100px; top: 100px; z-index: 1;}
+    .box03{background-color: blue;position: absolute; right: 100px;bottom: 100px;}
+
+    .wrap{
+      border: 5px solid #000;
+      background-color: yellow;
+      width: 1000px;
+      height: 500px;
+      position: relative;  /* 자식들의 기준점이 내가 됨 */
+      /* top: 100px;left: 200px; */
+      left: 50%; /* 브라우저크기의 50%만큼 왼쪽 기준이 이동함 */
+      transform: translateX(-50%); /* 왼쪽으로 박스 크기의 50%만큼 다시 이동함 --> 가운데정렬*/
+    }
+
+    /* 화면을 드래그 해도 똑같은 위치에 고정되어있음 */
+    aside{
+      width: 150px;
+      height: 200px;
+      border: 2px solid red;
+      background-color: yellow;
+      position: fixed;  /* 자식들의 기준점이 내가 됨 */
+      top: 300px;
+      right: 100px;
+    }
+    aside a{
+      background-color: black;
+      color: white;
+      padding: 10px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      position: absolute; top: 180px; left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>포지션 속성(요소의 배치방법) p.347</h2>
+  <p>포지션(position) 속성이란? 레이아웃 작업시 사용자가 부모요소 박스 안에서 원하는 콘텐츠를 선택하여 배치하기 위한 속성. 종류로는 static(요소가 가지고 있는 기본 위치값), absolute(절대배치), relative(상대배치), fixed(고정배치), sticky, inherit(상속)가 있다.</p>
+
+  <p>포지션 속성을 사용하면 위치값을 설정하기 위해 top, bottom, left, right 속성을 사용한다.</p>
+  <p>포지션 속성을 사용하면 float속성처럼 요소들과 겹치는 현상이 나타나는데, 위/아래 또는 앞/뒤 순서를 변경하고자 할 때는 z-index속성을 사용한다.</p>
+  <p>z-index속성은 먼저 작성된 태그요소가 z-index값이 0이 되며, 나중에 작성된 태그요소가 순서대로 번호가 매겨진다. z-index값을 변경하면 앞/뒤 순서도 변경할 수 있다.</p>
+
+  <h3>1. 절대배치(absolute)</h3>
+  <h3>2. 상대배치(relative)</h3>
+  <h3>3. 고정배치(fixed)</h3>
+  <h3>4. sticky</h3>
+
+  <div class="wrap">
+    <div class="box01">절대배치</div>
+    <div class="box02">절대배치</div>
+    <div class="box03">절대배치</div>
+  </div>
+
+  <aside>
+    <a href="#" title="위로 바로가기">Top</a>
+  </aside>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  
+</body>
+</html>

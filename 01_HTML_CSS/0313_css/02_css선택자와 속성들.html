@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_css선택자와 속성들</title>
+    <style>
+        /* 1. id선택자 */
+        #txt_color01{
+            background-color: yellow;
+            font-size: 24px;
+            color: red;
+        }
+        /* 2. class선택자 */
+        .color02{
+            color: blue;
+        }
+        .txt01{
+            font-family: "궁서체";
+            font-size: 20px;
+        }
+        /* 3. tag선택자 */
+        li{
+            background-color: beige;
+        }
+
+        /* css여러속성 적용하기 */
+        .p01{font-family: "궁서체", Arial, sans-serif;}
+        .p02{font-size: 14px; /* 12px, 13, 14, 15, 16, 17, 18 */}
+        address{font-style: normal;}
+        .p04{font-weight: bold;}
+
+    </style>
+</head>
+<body>
+    <h2>02_css선택자와 속성들</h2>
+    <p>css에서 가장 많이 사용하는 선택자 3가지와 서식을 꾸미기 위한 여러가지 속성들에 대해 학습한다.</p>
+
+    <h3>1. 기본선택자 - id, class, tag</h3>
+    <ul>
+        <li>#id선택자 : 사용자가 선택한 요소에 스타일 서식을 적용하기 위해서 사용하는 선택자이며, <span id="txt_color01">한 번 사용된 선택자는 더이상 사용이 불가능하다.</span> 중복되지 않는 서식을 적용하고자 할 때 사용.<span id="txt_color01">(레이아웃, 닫기버튼, 토글버튼 ...)</span>
+        </li>
+        <li><span class="color02 txt01">.class선택자</span> : 클래스 선택자는 사용자가 지정한 영역에 서식을 적용하기 위한 선택자로서 한번 작성된 선택자는 <span class="color02">'언제든 다시 사용할 수 있는 서식'</span>을 적용할 때 사용한다. class선택자는 사용자가 이름을 작성하여 적용하는데, 이름을 작성할 때 의미있는 이름으로 작성하며 이름앞에 . 기호를 붙여주는 것이 특징이다.</li>
+        <li>tag선택자 : 사용자가 지정한 태그를 문서안에서 찾아 서식을 적용하기 위한 선택자이다. 서식이 한꺼번에 변경되기 때문에 실제 사용시 원하지 않는 부분까지도 적용되기 때문에 주의해야 한다.</li>
+    </ul>
+
+    <h3>2. css속성의 종류</h3>
+    <p>css서식을 적용하기 위한 속성의 종류는 w3schools.com, mbn css를 검색하여 참고한다.</p>
+
+    <ul>
+        <li>글자관련 : font-family(글자모양), font-size(글자크기), color(글자색), text-decoration(밑줄, 줄없음, 위줄), text-transform(영문자 대소문자 전환), font-style(글자 기울이거나 보통)</li>
+        <li>문단관련 : text-align(문단정렬), text-indent(들여쓰기), line-height(행간)</li>
+        <li>크기관련 : width, height</li>
+        <li>여백관련 : margin(바깥쪽여백), padding(안쪽여백)</li>
+        <li>테두리관련 : border(테두리 선)</li>
+        <li>배경관련 : background-color, background-image, background-size, background-position...</li>
+        <li>레이아웃관련 : flex, grid, display, columns</li>
+        <li>애니메이션 관련 : animation, transition</li>
+        <li>변형관련 : 2D, 3D서식을 주기위한 transform속성</li>
+    </ul>
+
+    <h3>1. 글자, 문단관련 속성 사용하기</h3>
+    <p class="p01">font-family : 글자모양을 지정하고자 할 때 사용하는 속성, 한글폰트를 지정하고자 할 때는 ""인용부호를 사용해야 하며, 영문글꼴일 경우는 공백이 있는 글꼴일때만 인용부호를 붙인다.</p>
+
+    <p class="p02">font-size: 글자크기를 지정하는 속성으로서 px, %, em, rem단위가 있다. 기본값은 px단위를 많이 사용. 브라우저의 기본값은 16px이다.</p>
+
+    <p class="p03">font-style: 글자 스타일을 지정할 때 사용하는 속성이며 normal(보통), italic(기울게), oblique, inherit등의 속성값이 있다.</p>
+    <address>웹페이지 하단 카피라이트, 회사주소, 전화번호 등의 정보를 입력하고자 할 때 사용하는 태그</address>
+
+
+    <p class="p04">font-weight: 글자를 굵게, 얇게, 보통으로 변경하기 위한 속성. bold, bolder, normal, lighter, 100~900까지 속성값이 있다.</p>
+
+
+    <p class="p05">font-variant: 영문자를 '작은 대문자'로 변환시켜주는 속성</p>
+
+    <p class="p06">text-transform: 영문 소문자를 대문자로 전환, 대문자를 소문자로, 단어의 첫글자를 대문자로 전환시켜주는 속성</p>
+    
+    <p class="p07">text-decoration: 글자에 밑줄(underline), 윗줄(overline), 줄없음(none)을 지정하는 속성</p>
+    
+    <p class="p08">text-align: 문단정렬(left, right, center, justify)</p>
+    
+    <p class="p09">text-indent: 문단의 들여쓰기, 문단이 시작하는 줄에 들여쓰기가 됨.</p>
+
+
+
+
+</body>
+</html>
