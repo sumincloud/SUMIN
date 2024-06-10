@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.board{text-align:center;}
+table{
+  border-collapse: collapse;
+  border:none;
+}
+table caption{display:none;}
+table tr{
+  border-bottom:1px solid #ccc;
+  line-height:50px;
+}
+table th{width:100px;}
+table thead td input{width:90%;}
+table tr td{padding:5px 0px;}
+.free_board{width:80%;}
+.free_board input{height:40px;}
+.free_board tr:nth-child(2n+1) td{}
+.free_board tr:nth-child(2n) td{}
+.free_board tbody tr:nth-child(2) td{vertical-align:top;}

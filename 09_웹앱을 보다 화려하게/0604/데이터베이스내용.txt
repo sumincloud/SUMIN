@@ -1,0 +1,19 @@
+
+* 날짜 형식 yyyy-mm-dd형식으로 출력하기
+
+substr($data['datetime'],0,10)
+
+<?=substr($row['datetime'],0,10)?>
+----------------------------------------------------
+* 데이터 정렬방법 (오름차순, 내리차순)
+
+select * from 테이블 명  order by 컬럼명 ASC; //오름차순 1,2,3,4,5,6,7
+select * from 테이블 명  order by 컬럼명 DESC; //내림차순 10,9,8,7,6,5,4,3,2,1
+----------------------------------------------------
+* 검색조건 예시
+select c_name 가게이름, c_address , c_tel from customer where c_address like '%역삼동%' order by c_name
+
+
+
+
+

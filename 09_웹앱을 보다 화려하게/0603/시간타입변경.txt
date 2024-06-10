@@ -1,0 +1,1 @@
+<td><?=date('Y-m-d', strtotime($data['regdate']))?></td>
