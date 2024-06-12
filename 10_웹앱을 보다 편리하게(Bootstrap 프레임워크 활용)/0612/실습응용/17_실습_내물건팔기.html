@@ -12,15 +12,6 @@
   <!-- 초기화 서식 -->
   <link rel="stylesheet" href="./css/reset.css">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    body{
-      height: calc(100% + 150px);
-    }
 
     /* 헤더서식 */
     header{
@@ -91,6 +82,9 @@
       background: #222 !important;
       color: white !important;
     }
+    #last{
+      margin-bottom: 100px !important;
+    }
 
     /* 푸터서식 */
     footer{
@@ -154,7 +148,7 @@
     </div>
 
     <!-- 거래 희망 장소 -->
-    <div class="fs-4 mb-4">
+    <div class="fs-4 mb-4" id="last">
       <label for="memo" class="form-label fw-bold fs-6">거래 희망 장소</label>
       <select name="region" id="region" class="form-select mb-3" style="color: #aaa;">
         <option value="">위치 추가</option>
@@ -162,8 +156,6 @@
       <select name="region_show" id="region_show" style="color: #aaa;">
         <option value="">보여줄 동네 선택</option>
       </select>
-
-
     </div>
 
 

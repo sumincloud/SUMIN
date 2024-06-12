@@ -79,9 +79,9 @@
           <label for="country" class="form-label">도/시</label>
           <select class="form-select" id="country" required>
             <option value="">도/시</option>
-            <option value="">서울특별시</option>
-            <option value="">경기도</option>
-            <option value="">강원도</option>
+            <option value="서울특별시">서울특별시</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
           </select>
           <div class="invalid-feedback">
             도/시 지역을 선택해주세요.
@@ -92,9 +92,9 @@
           <label for="state" class="form-label">구</label>
           <select class="form-select" id="state" required>
             <option value="">구/읍/동</option>
-            <option value="">종로구</option>
-            <option value="">노원구</option>
-            <option value="">지행동</option>
+            <option value="종로구">종로구</option>
+            <option value="노원구">노원구</option>
+            <option value="지행동">지행동</option>
           </select>
           <div class="invalid-feedback">
             구/읍/동 지역을 선택해주세요.
@@ -142,15 +142,22 @@
 
 
 
-
-
-
-
     $('#signIn').click(function(e) {
       // 폼의 기본 동작인 submit을 막음
       e.preventDefault();
       validateCheck();
     });
+
+    $('input').keyup(function() {
+      // input에 입력할때마다 함수체크
+      validateCheck();
+    });
+    $('select').change(function() {
+      // select에 입력할때마다 함수체크
+      validateCheck();
+    });
+
+
 
     function validateCheck() {
 
