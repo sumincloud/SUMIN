@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box_model_계산하기 p.319</title>
+  <style>
+    .p01{
+      background-color: yellow;
+      width: 600px;
+      height: 100px;
+      display: inline-block;
+    }
+    span{
+      background-color: green;
+      width: 600px;
+      height: 100px;
+      padding: 10px;
+      margin: 50px;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+    }
+    .box01{
+      padding: 10px;
+      margin: 10px;
+    }
+    .box02{
+      /* 가로 : 100 + 15 + 10 = 125 */
+      /* 세로 : 100 + 10 + 6 = 116 */
+      margin-left: 15px;
+      margin-top: 10px;
+      padding: 3px 5px;
+    }
+    .box03{
+      /* 가로 : 100 + 3 + 5 + (4*2) + 2 + 5 = 123 */
+      /* 세로 : 100 + 8 + 18 + 6 = 132 */
+      margin: 0px 3px 8px 5px;
+      padding: 10px 4px 8px;  /* 패딩값이 세개면 가운데값이 좌우값이다 */
+      border-top: 4px solid red;
+      border-bottom: 2px solid red;
+      border-left: 2px solid blue;
+      border-right: 5px solid blue;
+    }
+    .box04{
+      border: 10px double blue;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h2>box_model_계산하기 p.319</h2>
+
+  <h3>1. display(가시)속성</h3>
+  <p>html태그는 저마다 보이지 않는 특성을 가지고 있는데 이것을 'display'속성이라고 한다.</p>
+  <dl>
+    <dt>display속성의 종류</dt>
+    <dd>inline</dd>
+    <dd>block</dd>
+    <dd>inline-block</dd>
+    <dd>table</dd>
+    <dd>table-cell</dd>
+    <dd>flex</dd>
+    <dd>grid</dd>
+    <dd>none</dd>
+  </dl>
+  <p class="p01">블럭방식의 요소 - p, h1~h6, div, header, nav, main, section, article, aside, footer, dl, dt, dd, ul, li, ol, form, fieldset, hr, table</p>
+
+  <span>인라인방식의 요소 - img, b, strong, sup, sub, input, label, button, textarea ...</span>
+
+  <h3>2. boxmodel의 개념</h3>
+  <p>box model이란? 블럭요소와 인라인요소가 가질 수 있는 크기, 마진, 패딩, 테두리 값을 사용하여 배치하는 개념을 말한다.</p>
+  <p>
+    박스계산공식<br>
+    전체 가로크기 = 가로너비 + 패딩값 + 마진값 + 테두리값<br>
+    전체 세로크기 = 세로높이 + 패딩값 + 마진값 + 테두리값
+  </p>
+
+  <p>패딩값 주기 : padding : 10px(위, 오른, 아래, 왼쪽 순으로 적용), padding : 0px 10px 20px 30px(12시 방향에서 시계방향으로 돌아가며 값 설정)</p>
+  <p>마진값도 패딩값 설정방법과 동일함.</p>
+
+  <div>100*100</div>
+  <div class="box01">100*100</div>
+  <div class="box02">100*100</div>
+  <div class="box03">100*100</div>
+  <div class="box04">100*100</div>
+  <div class="box05">100*100</div>
+  <div class="box06">100*100</div>
+  <div class="box07">100*100</div>
+
+  <p>box-sizing 속성을 사용시 padding, border값은 원래 크기에 포함하여 계산하기 때문에 박스크기에는 변함이 없다.</p>
+  <p>box-sizing:border-box (padding, border값 포함)</p>
+  <p>box-sizing:content-box (padding, border값 포함하지 않음)</p>
+
+
+</body>
+</html>

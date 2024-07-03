@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css단위</title>
+  <style>
+    .wrap{
+      width: 100%;
+      border: 3px solid black;
+    }
+    header{
+      line-height: 100px;
+      background: #ccc;
+    }
+    main{
+      background: yellow;
+      font-size: 2em; /* 부모의 2배 : 16px * 2 = 32px */
+    }
+    main > article{
+      background: gold;height: 100px;
+      font-size: 2em; /* 부모의 2배 : 32px * 2 = 64px */
+    }
+    main > section{
+      background: greenyellow;height: 200px;
+      font-size: 2rem; /* 기본설정값 16px * 2 = 32px */
+    }
+    main > aside{background: burlywood;height: 50px;}
+    .cont{
+      border: 3px solid red;
+      background: magenta;
+      display: flex;
+    }
+    .left_con{width: 700px;background: blue;}
+    .right_con{
+      width: calc(100% - 700px);   /* 100%에서 700px만큼 뺀 나머지를 너비로 설정 */
+      padding-left: calc(100% - 1000px);  /* 100%에서 1000px만큼 뺀 나머지를 왼쪽 패딩으로 설정 */
+    }
+
+    footer{
+      background: green;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>css단위 - pxtoem(사이트)</h2>
+  <ul>
+    <li>px - pixel, 화면 비율에 상관없이 고정되는 단위(절대단위)</li>
+    <li>% - 부모요소를 기준으로 비율을 표현하는 단위.(상대단위, 반응형에서 주로 많이 사용됨) 예) 16px = 100%, 150% = 24px</li>
+    <li>em - 부모요소의 font-size를 상속받아 크기가 결정되는 단위</li>
+    <li>rem - root의 약자로서 부모의 font-size를 상속받지 않고 최상위(html)요소에서 결정된 font-size를 기준으로 크기가 결정되는 단위. 예) 16px = 1rem</li>
+    <li>vh - viewport height의 약자로서 웹브라우저의 높이를 100으로 기준하여 높이크기가 결정됨.</li>
+    <li>vw - viewport width의 약자로서 웹브라우저의 너비를 100으로 기준하여 가로너비가 결정됨.</li>
+    <li>vmin - 높이와 너비중 짧은 쪽으로 100을 기준하여 크기가 결정됨.</li>
+    <li>vmax - 높이와 너비중 긴 쪽으로 100을 기준하여 크기가 결정됨.</li>
+  </ul>
+
+  <p>반응형웹에서 값을 자동으로 설정하기 위한 함수 <br>
+    calc(전체값 - 사용할값);<br>
+    width : calc(전체값 - 사용할값);<br>
+    margin : calc(전체값 - 사용할값);<br>
+  </p>
+  
+  <div class="wrap">
+    <header>헤더영역</header>
+
+    <main>
+      <article>독립적인 내용</article>
+      <section>여러개의 독립적인 내용을 묶음</section>
+      <section class="cont">
+        <article class="left_con">왼쪽</article>
+        <article class="right_con">오른쪽</article>
+      </section>
+      <aside>왼, 오른쪽 사이드에 배치되는 영역</aside>
+    </main>
+    
+    <footer>푸터영역</footer>
+  </div>
+</body>
+</html>

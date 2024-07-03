@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 내장객체_5윈도우객체</title>
+</head>
+<body>
+  <h2>자바스크립트 내장객체_5윈도우(window)_브라우저 객체</h2>
+  <p>브라우저 객체는 사용자가 사용하는 웹브라우저의 창에서 다양한 동작이나 속성을 설정하고자 할 때 사용하는 객체이다.</p>
+  <h3>Window 객체</h3>
+  <p>window객체는 브라우저 객체 중 '최상위 객체'로서 현재 실행되고 있는 브라우저창을 나타낸다.</p>
+
+  <h3>Window 객체의 속성과 메서드</h3>
+  <dl>
+    <dt>Window 객체의 속성(property)종류</dt>
+    <dd>document</dd>
+    <dd>frameElement</dd>
+    <dd>innerHeight</dd>
+    <dd>innerWidth</dd>
+    <dd>location</dd>
+    <dd>name</dd>
+    <dd>screenX</dd>
+    <dd>screenY</dd>
+    <dd>scrollX, scrollY</dd>
+    <dd>sessionStorge</dd>
+
+
+    <dt>Window 객체의 메서드(method) 종류</dt>
+    <dd>alert(); - 경고창 띄우기</dd>
+    <dd>blur(); - 현재창에서 포커스를 제거</dd>
+    <dd>close(); - 현재창을 닫기</dd>
+    <dd>confirm(); - 확인/취소 버튼이 있는 확인창을 표시</dd>
+    <dd>focus(); - 현재창에 포커스를 부여함</dd>
+    <dd>moveBy(); - 현재창을 지정한 크기만큼 이동</dd>
+    <dd>moveTo(); - 현재창을 지정한 좌표로 이동</dd>
+    <dd>open(); - 지정한 문서를 열기</dd>
+    <dd>prompt();  - 사용자가 입력가능한 프롬프트창을 활성화함</dd>
+    <dd>resizeTo(); - 동적으로 브라우저 창의 크기를 조절</dd>
+    <dd>scroll(); - 문서의 특정위치로 스크롤합니다.</dd>
+    <dd>sizeToContent(); - 내용에 맞게 창의 크기를 조절</dd>
+    <dd>stop(); - 로딩중지</dd>
+  </dl>
+
+  <input type="button" value="alert('경고창');" onclick="alert('메세지를 띄웁니다.')">
+  <input type="button" value="prompt('내용입력');" onclick="prompt('내용을 입력합니다.')">
+  <input type="button" value="confirm('확인,취소');" onclick="confirm('결재를 진행하시겠습니까?')">
+  <input type="button" value="open('문서열기');" onclick="popup()">
+  <input type="button" value="close(); 닫기" onclick="window.close()">
+
+  <h3>실습예제. select, option태그를 활용하여 'Family Site'구현하기</h3>
+  <select name="" id="" onchange="siteUrl(this);">
+    <option value="">Family Site</option>
+    <option value="http://www.naver.com">네이버</option>
+    <option value="http://www.daum.net">다음</option>
+    <option value="http://www.nate.com">네이트</option>
+  </select>
+
+  <h3>실습예제. location 객체를 사용하여 웹페이지의 url 주소 정보를 표시하기</h3>
+  <p id="location"></p>
+
+  <h3>실습예제. window.screen객체를 사용하여 현재 브라우저의 화면크기 표시하기</h3>
+  <p id="window"></p>
+
+  <script>
+    //현재문서의 위치정보 가져오기
+    document.getElementById('location').innerHTML=`전체주소 : ${location.href} ${location.host} ${location.protocol}`
+
+    //현재 브라우저의 크기값 가져오기
+    document.getElementById('window').innerHTML=`현재 화면 가로해상도, 세로해상도의 크기는 ${screen.width}, ${screen.height} 입니다.`
+
+    function popup(){
+      //필요한 문서를 불러오기
+      //window.open('파일경로와 파일이름.확장자', '옵션', 'width=가로크기, height=세로크기');
+      window.open('자바스크립트 내장객체_4문자열객체_실습예제.html','','width=400, height=500');
+    }
+
+    function siteUrl(a){
+      if(a.value!="none"){ //a의 변수값이 있다면
+        window.open(a.value,'_self'); //윈도우 현재창에서 해당 웹페이지로 연결한다. _self, _blank
+        a.value="none";
+      }else{
+        return; //선택을 안한경우는 그냥 종료(아무일도 일어나지 않는다.)
+      }
+    }
+  </script>
+
+</body>
+</html>

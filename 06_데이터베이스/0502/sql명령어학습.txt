@@ -1,0 +1,56 @@
+문1)  주문수량이 제일 많은 가게이름(상호명)은?
+select c_name from orders where o_num=(select max(o_num) from orders); //스타벅스
+
+문2) 한번 주문에 제일 많이 주문을 한 고객의 이름, 주소, 전화번호를 출력하기
+select c_name, c_address, c_tel from customer where c_name=(select c_name from orders where o_num=(select max(o_num) from orders));
+
+문3) 한번 주문에 제일 많이 주문을 한 상품의 이름과 단가 출력하기
+select g_name, g_cost from goods where g_code = ( select g_code from orders where o_num=(select max(o_num) from orders));
+
+문4) 상품정보에서 단가가 평균보다 낮은 상품의 이름을 출력하기  9개
+select g_name from goods where g_cost < (select avg(g_cost) from goods);
+
+문5) 평균단가보다 낮은 상품을 goods_low 테이블을 생성하기(create)
+create table goods_low select * from goods where g_cost < (select avg(g_cost) from goods);
+
+//고객이 원하는 정보만 따로 테이블에서 추출하여 새로운 테이블 생성해준다.
+
+문6) 평균단가보다 높은 상품을 goods_up테이블 생성하기(create)
+create table goods_up select * from goods where g_cost > (select avg(g_cost) from goods);
+
+문7) 상품번호가 10번인 상품의 이름과 가격을 57번 상품의 이름과 상품단가로 변경하기(update)
+10, 만두세트, 315   => 10, 녹차, 105
+57, 녹차, 105
+update goods set g_name = (select g_name from goods where g_code=57), g_cost=(select g_cost from goods where g_code=57) where g_code=10;
+
+결과 출력하기  :  select * from goods;   10, 녹차, 105     변경되었는지 확인 
+
+문8) 데이터 삭제 (delete)
+상품명(goods)에 '만두'라는 글자가 들어간 상품을 주문한 정보(orders)를 삭제하기.
+*g_code가 일치하는 정보를 찾아서 삭제하면 됨.
+
+delete from orders where g_code = (select g_code from goods where g_name like '%만두%');
+
+방법1.
+delete from orders where g_code in (select g_code from goods where g_name like '%만두%');
+방법2. 
+delete orders from orders, goods where goods.g_code = order.g_code and goods.g_name like '%만두%';
+방법3. 
+delete orders from orders inner join goods on orders.g_code = goods.g_code where goods.g_name like "%만두%";
+
+-----------------------------------------------------------------------------------------------
+테이블 조인시 약어 설정하기
+order o, customer c
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

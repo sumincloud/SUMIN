@@ -1,0 +1,31 @@
+----------------------member 테이블 생성---------------------------
+create table member(
+    mb_no int(11) not null AUTO_INCREMENT,
+    mb_id varchar(20) not null DEFAULT '',
+    mb_password varchar(255) not null DEFAULT '',
+    mb_name varchar(255) not null DEFAULT '',
+    mb_gender varchar(10) not null DEFAULT '',
+    mb_email varchar(255) not null DEFAULT '',
+    mb_job varchar(255) not null DEFAULT '',
+    mb_language varchar(255) not null DEFAULT '',
+    mb_datetime datetime not null DEFAULT CURRENT_TIMESTAMP,,
+    PRIMARY KEY (mb_no),
+    UNIQUE KEY mb_id (mb_id),
+    KEY mb_datetime (mb_datetime)
+);
+
+기본키(primary key) - 테이블에서 가장 중심이 되는 컬럼. 반드시 not null이 되어야 함. 다른 테이블과 연관관계에서 조인시 반드시 필요.
+
+유니크키(unique key) - 테이블 필드에서 유니크한 필드만 설정 가능한 인덱스. 데이터 조회시 빠르게 검색할 수 있으며 무결성 체크에도 사용됨.
+ex) 회원번호, 아이디가 있는 경우 회원번호를 기본키로 잡고 아이디를 유니크키로 설정해놓으면 아이디의 중복등록도 방지되고, 아이디로 검색 또는 조회했을 경우 유니크 인덱스를 타기 때문에 빠르게 검색이 가능, primary key는 테이블에서 한번만 설정이 가능.
+
+
+
+
+
+
+
+
+
+
+

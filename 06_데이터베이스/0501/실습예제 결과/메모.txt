@@ -1,0 +1,44 @@
+
+1. 테이블 생성
+CREATE TABLE BOOK_STORE(
+    CODE CHAR(5) COMMENT '서점 CODE',
+    NAME VARCHAR(50) COMMENT '상호',
+    AREA1 VARCHAR(10) COMMENT '주소(시/도)',
+    AREA2 VARCHAR(10) COMMENT '주소(구/군)',
+    AREA3 VARCHAR(10) COMMENT '주소(동/면)',
+    BOOK_CNT INT(4) COMMENT '보유 서적수',
+    OWNER_NM VARCHAR(10) COMMENT '대표자 성명',
+    TEL_NUM VARCHAR(20) COMMENT '대표자 전화번호'
+);
+
+2. 데이터 입력
+INSERT INTO book_store VALUES ('00001', 'YES24', '서울', '서초', '방배', '10000', '정회원', '02-1234-5678');
+INSERT INTO book_store VALUES ('00002', '교보문고', '강원', '동해', '심곡', '11000', '나대연', '033-2234-5678');
+INSERT INTO book_store VALUES ('00003', '알라딘', '경기', '성남', '분당', '9000', '김상군', '031-3234-5678');
+INSERT INTO book_store VALUES ('00004', '인터파크', '경남', '창원', '경화', '8000', '장애인', '055-4234-5678');
+INSERT INTO book_store VALUES ('00005', '리브로', '광주', '남구', '(NULL)', '12000', '박천민', '062-5234-5678');
+INSERT INTO book_store VALUES ('00006', 'G마켓', '제주', '서귀포', '(NULL)', '13000', '전세용', '064-6234-5678');
+INSERT INTO book_store VALUES ('00007', '11번가', '부산', '수영', '광안', '10000', '최삽삽', '051-7234-5678');
+
+3. 데이터 조회
+(가)
+select CODE 서점코드, NAME 상호 from book_store where TEL_NUM like '03%' or TEL_NUM like '05%';
+(나)
+SELECT CONCAT(FORMAT(BOOK_CNT,0),'권') 보유서적수 from book_store;
+(다)
+SELECT RIGHT(TEL_NUM, 9) 전화번호 from book_store;
+(라)
+SELECT NAME 상호, CHAR_LENGTH(NAME) 상호명길이 from book_store;
+(마)
+SELECT LPAD(CODE, 10 , 0) 서점코드 from book_store;
+
+4. 데이터 수정
+(가)
+UPDATE book_store SET NAME = CONCAT(NAME,'_',AREA1);
+(나)
+UPDATE book_store SET AREA3 = '미정' WHERE AREA3 = '(NULL)';
+
+
+
+
+

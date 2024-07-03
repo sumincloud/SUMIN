@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css선택자_15_클래스결합_16_root선택자</title>
+  <style>
+    :root{   /* 변수명으로 값을 저장하는 법 */
+      /* 글자관련 */
+      --font_size_title:20px;
+
+      /* 색상관련 */
+      --bg_blue_color:#00f;
+      --base_text_color:#333;
+    }
+    .icon{
+      color: white;
+      border: 1px solid #ccc;
+      padding: 3px 5px;
+      font-size: 11px;
+    }
+
+    /* .icon01{background-color: blue;} */
+    .icon01{background-color: var(--bg_blue_color);}
+    .icon02{background-color: red;}
+  </style>
+</head>
+<body>
+  <h2>css선택자_15_클래스결합_16_:root선택자</h2>
+  <h3>1. 클래스결합</h3>
+  <p>클래스 선택자 다른 클래스 선택자와 중복으로 사용할 수 있는데, 선택자 사용시 '클래스1 클래스2'처럼 적용하며 개수에는 상관이 없다.</p>
+
+  <span class="icon icon01">오늘의 책</span>
+  <span class="icon icon02">무료배송</span>
+  <span class="icon icon01">이벤트</span>
+
+</body>
+</html>

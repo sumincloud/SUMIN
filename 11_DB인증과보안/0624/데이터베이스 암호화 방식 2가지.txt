@@ -1,0 +1,15 @@
+1번 방식
+$sql = "select PASSWORD('$mb_password') AS pass";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$mb_password = $row['pass'];
+
+$sql = "insert into korair_member(mb_id, mb_password, mb_name, mb_datetime) value('$mb_id', '$mb_password', '$mb_name', '$mb_datetime')";
+$result = mysqli_query($conn, $sql);
+
+2번 방식
+$mb_password = PASSWORD_HASH('$mb_password', PASSWORD_DEFAULT);
+
+$sql = "insert into korair_member(mb_id, mb_password, mb_name, mb_datetime) value('$mb_id', '$mb_password', '$mb_name', '$mb_datetime')";
+
+$result = mysqli_query($conn, $sql);

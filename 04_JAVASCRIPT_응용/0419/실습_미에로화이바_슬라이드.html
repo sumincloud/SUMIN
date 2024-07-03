@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_미에로화이바_슬라이드</title>
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    main{
+      width: 1200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide{
+      display: flex;
+      position: relative;
+      left: 0;
+    }
+    .slide img{
+      width: 100%;
+    }
+    /* 컨트롤버튼 */
+    .c_btn{
+      position: absolute;
+      left: 50%; bottom: 10px;
+      transform: translate(-50%);
+    }
+    .c_btn span{
+      display: inline-block;
+      width: 15px; height: 15px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+    .act{background: red !important;}
+
+    i.fas{
+      position: absolute;
+      right: 20%; bottom: 10px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <main>
+    <div class="slide">
+      <img src="../0417/images/visual01.jpg" alt="">
+      <img src="../0417/images/visual02.jpg" alt="">
+      <img src="../0417/images/visual03.jpg" alt="">
+    </div>
+
+    <div class="c_btn">
+      <span class="act">&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+    </div>
+    <i class="fas fa-pause"></i>
+  </main>
+
+  <footer></footer>
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- 제이쿼리 래퍼 -->
+  <script>
+    $(document).ready(function(){
+      let c_btn = $('.c_btn span');
+      let img_w = 1200;
+      let i=$('.c_btn span').index();
+
+      c_btn.click(function(){
+        i=$(this).index();
+
+        slide(i);
+      })
+
+      //반복 시간 설정
+      let Timer = setInterval(function(){
+        if(i==2){
+          i=0;
+          c_btn.removeClass('act');
+          c_btn.eq(i).addClass('act')
+        }else{
+          i++
+          c_btn.removeClass('act');
+          c_btn.eq(i).addClass('act')
+
+          slide(i);
+        }
+      },3000)
+
+      function slide(i){
+
+        let move = -(img_w*i)
+        $('.slide').animate({'left':move},300)
+
+        c_btn.removeClass('act');
+        c_btn.eq(i).addClass('act')
+        
+      }
+      
+      // 정지버튼 클릭시 시간을 제거
+      $('i.fa-pause').click(function(){ 
+        clearInterval(Timer);
+
+        if($(this).hasClass('fas fa-pause')==true){ //일시정지 모양일때
+          clearInterval(Timer); //애니메이션 멈추고
+          $(this).attr('class','fas fa-play'); //버튼모양이 변경되도록한다.
+        }else{
+          $(this).attr('class','fas fa-pause');
+        }
+      })
+
+      $('i.fa-play').click(function(){ 
+        function slide(i){
+
+        let move = -(img_w*i)
+        $('.slide').animate({'left':move},300)
+
+        c_btn.removeClass('act');
+        c_btn.eq(i).addClass('act')
+        }
+
+        let Timer = setInterval(function(){
+          if(i==2){
+            i=0;
+            c_btn.removeClass('act');
+            c_btn.eq(i).addClass('act')
+          }else{
+            i++
+            c_btn.removeClass('act');
+            c_btn.eq(i).addClass('act')
+
+            slide(i);
+          }
+        },3000)
+      })
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_css선택자_그룹선택자</title>
+  <style>
+    .title_03{
+      color: blue;
+    }
+    .p01{
+      background-color: #cccccc;
+    }
+
+    .title_03, .p01{
+      font-family: "궁서체";
+      width: 375px;
+      text-align: center;
+      border: 2px solid #333333;
+    }
+
+    .cart, .buy{
+      color: white;
+      border-radius: 10px;
+      border: 0;
+      width: 150px;
+      height: 50px;
+    }
+    .cart{
+      background-color: gray;
+    }
+    .buy{
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h2>04_css선택자_그룹선택자(,)</h2>
+  <p>그룹선택자(,)는 선택자를 모아모아서 한꺼번에 적용하기 위한 선택자로서 공통서식을 주고자 할 때 사용.</p>
+  <p>작성법) 선택자A, 선택자B, 선택자C</p>
+
+  <h3 class="title_03">제목요소</h3>
+  <p class="p01">문단요소</p>
+  
+  <button class="cart">장바구니</button>
+  <button class="buy">바로구매</button>
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하림펫푸드 모바일 홈페이지</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+
+  <!-- 공통서식 - 헤더, 푸터 -->
+  <link href="./css/common.css" rel="stylesheet" type="text/css">
+
+  <!-- 아이콘폰트 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+  <input type="checkbox" id="toggle">
+
+  <!-- 상단헤더영역 -->
+  <header id="header">
+    <h1><a href="index.html" title="메인페이지로 바로가기">
+      <img src="./images/logo2.png" alt="상단로고">
+    </a></h1>
+
+    <!-- 토글버튼 -->
+    <label for="toggle"><i class="fas fa-bars">전체메뉴</i></label>
+
+    <!-- 장바구니 -->
+    <i class="fas fa-shopping-cart">장바구니</i>
+
+    <!-- 전체메뉴 -->
+    <nav class="gnb">
+      <ul>
+        <li><a href="brand.html" title="브랜드">브랜드</a>
+          <ul class="sub">
+            <li><a href="brand.html" title="가장 맛있는 시간 30일">가장 맛있는시간30일</a></li>
+            <li><a href="#" title="더리얼">더리얼</a></li>
+            <li><a href="#" title="밥이보약">밥이보약</a></li>
+          </ul>
+        </li>
+        <li><a href="deli.html" title="정기배송">정기배송</a>
+          <ul class="sub">
+            <li><a href="deli.html" title="정기배송">정기배송</a></li>
+            <li><a href="#" title="빠른배송">빠른배송</a></li>
+          </ul>
+        </li>
+        <li><a href="dog.html" title="DOG">dog</a>
+          <ul class="sub">
+            <li><a href="dog.html" title="오늘생산배송">오늘생산&middot;배송</a></li>
+            <li><a href="#" title="브랜드별">브랜드별</a></li>
+            <li><a href="#" title="연령별">연령별</a></li>
+            <li><a href="#" title="유형별">유형별</a></li>
+            <li><a href="#" title="샘플신청">샘플신청</a></li>
+            <li><a href="#" title="상품후기">상품후기</a></li>
+          </ul>
+        </li>
+        <li><a href="cat.html" title="CAT">cat</a>
+          <ul class="sub">
+            <li><a href="cat.html" title="오늘생산배송">오늘생산&middot;배송</a></li>
+            <li><a href="#" title="브랜드별">브랜드별</a></li>
+            <li><a href="#" title="연령별">연령별</a></li>
+            <li><a href="#" title="유형별">유형별</a></li>
+            <li><a href="#" title="샘플신청">샘플신청</a></li>
+            <li><a href="#" title="상품후기">상품후기</a></li>
+          </ul>
+        </li>
+        <li><a href="magiz.html" title="매거진">매거진</a></li>
+        <li><a href="story.html" title="우리이야기">우리이야기</a>
+          <ul class="sub">
+            <li><a href="story.html" title="우리이야기">우리이야기</a></li>
+            <li><a href="#" title="우리의 약속">우리의 약속</a></li>
+            <li><a href="#" title="100%휴먼그레이드">100%휴먼그레이드</a></li>
+            <li><a href="#" title="이노베이션">이노베이션</a></li>
+            <li><a href="#" title="제조시설">제조시설</a></li>
+            <li><a href="#" title="반려견동반">반려견동반</a></li>
+          </ul>
+        </li>
+        <li><a href="tour.html" title="투어신청">투어신청</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인콘텐츠영역 -->
+  <main>모바일콘텐츠</main>
+
+  <!-- 푸터영역 -->
+  <footer>
+    <a href="#" title="상단으로 바로가기" id="top_btn">
+      <i class="fas fa-angle-up"></i><br>Top
+    </a>
+
+    <a href="http://design2010.dothome.co.kr/0401/index.html?move_pc_screen=1" title="pc버전보기">PC버전보기</a>
+
+  </footer>
+
+  <script>
+
+    // window객체
+    let scrollTop;
+    const t_btn = document.getElementById('top_btn');
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', function(){
+
+      scrollTop = window.scrollY;
+
+      // 출력방법 4가지
+      console.log(scrollTop);
+
+      // 만약에 세로스크롤값일 900픽셀 이상일 경우라면
+      if(scrollTop>=900){
+        t_btn.classList.add('act'); //클래스 서식을 적용한다.
+      }else{ //그렇지 않은 경우
+        t_btn.classList.remove('act'); //클래스 서식을 제거한다.
+      }
+
+      // 세로스크롤값일 300이상이면 헤더에 서식을 적용하고
+      if(scrollTop >= 2){
+        header.classList.add('h_act');
+      }else{   //그렇지 안으면 헤더서식을 제거한다.
+        header.classList.remove('h_act');
+      }
+    });
+
+  </script>
+</body>
+</html>

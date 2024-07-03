@@ -1,0 +1,62 @@
+0311_html_글자관련,목록관련,이미지,하이퍼링크 태그학습_홍길동
+ 1. 요약정리
+ 2. 파일첨부
+
+https://cafe.naver.com/uiuxweb
+
+html5 마크업 검사 서비스 주소
+영문 사이트 https://validator.w3.org/
+한글 사이트 https://validator.kldp.org/
+
+비밀번호
+jeon9897
+
+file > export(내보내기)
+
+구글시트주소
+https://docs.google.com/spreadsheets/d/1rsi8pEn_BxXmdjO4jxWy9I1uKrQ9T5lhSVszwceWJS4/edit?usp=sharing
+
+url 주소
+상대주소 
+./image/ 하위폴더일 경우
+../0310/image/ 상위폴더일 경우
+
+절대주소
+http://도메인주소/폴더명/파일명.확장자
+http://yuri9878.dothome.co.kr/0312/09이미지맵.html
+
+
+html,css,js
+https://www.w3schools.com/
+
+css 초기화
+https://cssdeck.com/blog/
+
+css flex 정리
+https://studiomeal.com/archives/197
+
+미리캔버스
+https://www.miricanvas.com/ko
+
+css 젠 가든
+https://csszengarden.com/
+
+
+hover
+https://github.com/IanLunn/Hover
+
+트렌스폼 css 종류
+https://animista.net/play/basic
+
+구글폰트
+https://fonts.google.com/
+
+https://developers.google.com/speed/libraries?hl=ko#jquery
+
+제이쿼리
+https://oscarotero.com/jquery/
+
+## CMS(Contents Management System)
+
+아이콘
+https://www.flaticon.com/kr/

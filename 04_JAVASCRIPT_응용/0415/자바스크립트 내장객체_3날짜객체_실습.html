@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트_실습예졔</title>
+  <style>
+    .box01{
+      border: 3px solid black;
+      width: 600px;
+      height: 400px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 100px;
+    }
+    #recommend{
+      position: absolute;
+      font-size: 30px;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: pink;
+      width: 400px; height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+    #image{
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box01">
+    <h2 id="recommend"></h2>
+    <img src="" alt="" id="image">
+  </div>
+</body>
+
+<script>
+  let today = new Date();
+  /* document.write(today.getDay()); */
+
+  let day = ['일', '월', '화', '수', '목', '금', '토'];
+  document.getElementById('recommend').innerHTML=`오늘 (${day[today.getDay()]})의 추천상품`
+  document.getElementById('image').src='./food/food'+(today.getDay()+1)+'.jpg';
+
+
+
+</script>
+</html>

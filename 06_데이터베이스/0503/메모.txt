@@ -1,0 +1,12 @@
+CREATE TABLE noodle(
+    num int(10) AUTO_INCREMENT PRIMARY KEY COMMENT '번호' not null,
+    name VARCHAR(50) COMMENT '라면이름' not null,
+    company VARCHAR(10) COMMENT '제조사 not null',
+    kind VARCHAR(1) COMMENT '라면형태(C:용기라면, M:일반라면)' not null,
+    price VARCHAR(5) COMMENT '가격' not null,
+    e_date VARCHAR(8) COMMENT '유통기한' not null
+);
+
+
+
+

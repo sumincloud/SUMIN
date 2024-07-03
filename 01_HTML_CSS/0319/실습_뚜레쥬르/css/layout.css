@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+
+/* 레이아웃 서식 */
+*{
+  margin:0px;padding:0px;
+}
+body{
+  font-family: "맑은 고딕", arial, sans-serif;
+  font-size:13px;
+  color:#333333;
+  background-color: beige;
+}
+a{color:#333333;text-decoration:none;}
+ol, ul, li{list-style:none;}
+
+/* ---------------헤더서식----------------- */
+header{
+  height: 147px;
+  background-color: #0d4633;
+  position: fixed;
+  width: 100%;
+  z-index: 10;  /* 맨 위로 올라오게(우선순위) */
+}
+.header_inner{
+  width: 1000px;
+  margin: 0 auto;
+}
+/* 이미지때문에 생기는 단차를 없애준다. */
+header img{
+  display: block;
+}
+
+.header_inner > nav{
+  position: relative;
+}
+
+.header_inner > nav > a{
+  position: absolute;
+  right: -100px; top: -100px;
+}
+
+/* -----------------메인서식----------------- */
+main{padding-top: 147px;}
+main > .slide{}
+main > .slide > h2{display: none;}
+
+.slide img{
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+
+}
+/* 이미지를 디바이스 너비에 맞게 최적화 */
+/* main > .slide img{width: 100%;} */
+
+
+/* 콘텐츠01 서식 */
+.con01{
+  width: 1000px;
+  margin: 10px auto;
+  display: flex;  /* 부모 안에 있는 자식들이 가로로 정렬되도록 함 */
+  justify-content: space-between;  /* display : flex를 했을 때, 안에 자식들을 양쪽정렬 시킴 */
+  flex-wrap: wrap;   /* display : flex를 해서 부모의 너비 1000px를 넘어간 자식들을 아래쪽으로 내려가게 함 */
+}
+.con01 h2, .con01 h3{
+  display: none;   /* 제목 글씨들을 숨겨줌 */
+}
+.banner{
+  width: 393px;
+}
+.recommand{
+  width: 596px;
+}
+.foot_banner{
+  padding-top: 10px;
+}
+
+/* 콘텐츠02 서식 */
+.con02{
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.con02 h2{display: none;}
+.shop{}
+.shop h3, .banner2 h3{display: none;}
+.banner2{}
+
+/* 콘텐츠03 서식 */
+.con03{
+  width: 1000px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+.con03 h2{display: none;}
+.news{}
+.news h3, .notice h3{display: none;}
+
+/* -----------푸터영역 서식----------- */
+footer{
+  background-color: #333;
+}
+.f_top{
+  background-color: beige;
+}
+.family_site, address{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.f_bottom{}
+address{
+  color: #fff;
+  font-style: normal;
+  line-height: 40px;
+}
+
+

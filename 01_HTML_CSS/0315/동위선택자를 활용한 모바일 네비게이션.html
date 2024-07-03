@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습-동위선택자를 활용한 모바일 네비게이션</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    body{
+      font-family: "맑은 고딕", Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #333;
+    }
+    header{
+      background-color: yellow;
+      height: 90px;
+    }
+    nav{
+      position: fixed;
+      top: 0px;
+      left: 100%; /* 왼쪽기준이 100%만큼 오른쪽으로 이동하게 되어 화면 밖으로 숨겨짐 */
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      transition: 0.5s;
+    }
+    nav > label{
+      color: white;
+      font-size: 20px;
+    }
+
+    main{
+      background-color: green;
+      height: 600px;
+    }
+    footer{
+      background-color: #333;
+      height: 100px;
+    }
+    #toggle:checked + nav{left:0px} /* 토글버튼 선택 시 내비게이션이 왼쪽으로 0px위치만큼 나타나도록 한다. */
+
+  </style>
+</head>
+<body>
+  <!-- 상단영역 -->
+  <header>
+    로고, 내비게이션, 로그인, 회원가입, 검색폼
+    <label for="toggle">
+      <img src="./images/toggle.png" alt="전체메뉴">
+    </label>
+
+    <input type="checkbox" id="toggle">
+
+    <nav>
+      <label for="toggle">닫기</label>
+      내비게이션</nav>
+  </header>
+  
+  <!-- 본문영역 -->
+  <main>
+    메인콘텐츠 영역
+  </main>
+
+  <!-- 푸터영역 -->
+  <footer>
+    푸터영역
+  </footer>
+</body>
+</html>

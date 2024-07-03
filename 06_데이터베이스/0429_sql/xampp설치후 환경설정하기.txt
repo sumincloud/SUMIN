@@ -1,0 +1,78 @@
+체크항목
+* apache
+* mysql
+설치안함 - ftp, mail server, tomcat, perl, web, fake
+
+엑세스 허용 - 허용함
+---------------------------------
+http://localhost/ or http://127.0.0.1
+---------------------------------
+dashboard 폴더 (루트폴더) 변경하기
+kdt폴더로 변경하기
+-----------------------------------
+xampp 환경설정
+바탕화면 - 내컴퓨터 - 마우스 오른쪽 메뉴 '속성'
+속성화면에 오른쪽 메뉴 '고급시스템 설정' 클릭
+'고급'탭에서 '환경변수' 클릭
+'새로만들기' 버튼 클릭하여 'c:\xampp\mysql\bin\ 폴더지정함
+
+cmd에서 mysqladmin -u root password 1234 입력하여 데이터베이스 관리자 패스워드 설정함.
+
+* xampp패널에서 admin 버튼 클릭하여 오류화면이 뜨는지 확인
+xampp폴더에 phpmyadmin 폴더안에 있는 config.inc.php파일을 열어서 수정 패스워드 입력 : 1234  (21번줄)  설정하고 종료
+
+mysql -uroot -p1234
+----------------------------------------------------------------------
+
+------------------------------------------
+
+xampp설치후 실행하면 오른쪽 'config'버튼 클릭하여 
+httpd.conf파일 설정함 => 서버 루트폴더 지정하기 위해.
+'DocumentRoot'항목 검색하여 폴더명 변경함(내컴퓨터 c:/xampp/'에서 폴더 생성함.)
+* 서버 종료후 다시 실행하면 폴더 변경됨.
+----------------------------------
+php업로드 관련 설정
+* config메뉴의 php(php.ini)항목클릭
+  file_uploads=On   : 파일업로드 허용여부
+  upload_max_filesize = 40M : 파일 업로드 최대용량(기본 40)
+  post_max_size=40M : post방식으로 전송시 최대 전송 용량설정
+  max_execution_time=120 : php파일 최대 실행시간설정.
+  memory_limit = 512M : 실행되는 스크립트 마다 최대 메모리 소비량
+-----------------------------------
+개발중 에러 출력설정
+1. display_errors=On : php문서 에러시 내용출력 허용여부
+-----------------------------------
+php문서 및 변수 값 전달에 관련된 설정
+1. register_globals = off  : 전역변수 사용할지 말지 여부
+2. short_open_tag=off : 
+<?php 내용작성 ?> 
+<? 내용작성 ?>   문법을 간략하게 작성할 수 있는 옵션 
+
+--- mysql --------------------------------
+닷홈 데이터베이스 계정 주소
+http://id.dothome.co.kr/myadmin
+--------------------------------------------
+환경설정
+xampp패널에서 mysql config클릭 하여 my.ini파일열기
+
+한글코드 호환
+default-character-set=utf8mb4
+=>default-character-set=utf8로 설정
+mysqldump
+=> default-character-set=utf8로 설정
+mysql
+=> default-character-set=utf8로 설정
+
+----------------------
+cmd에서 cd\ 엔터
+cd c:\xampp
+mysqladmin -u root password 1234
+-------------------------------------------
+create database 데이터베이스명;
+create database kdt;
+show databases;
+drop database 데이터베이스명;
+-------------------------------------------
+
+
+

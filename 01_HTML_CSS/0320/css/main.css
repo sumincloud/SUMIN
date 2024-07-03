@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/* main.css */
+body{
+  font-family: "맑은 고딕", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+a{
+  color: #333;
+  font-size: 13px;
+}
+
+/* ------------------header-------------------- */
+header{
+  height: 70px;
+  position: relative;  /* 자식요소들의 기준이 됨 */
+}
+header h1{
+  width: 200px;   /* 로고 이미지 사이즈 -> 너무 크면 이미지사이즈 작게 조정하면서 같은 값으로 바꿔준다. */
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);  /* X,Y 둘 다 동시에 이동 */
+  left: 50%;
+}
+header h1 img{
+  width: 200px;
+}
+
+.total_btn, .cart_btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);  /* Y값만 이동 */
+}
+.total_btn{left: 10px;}
+.cart_btn{right: 10px;}
+.total_btn img, .cart_btn img{
+  width: 40px;
+  padding: 4px;
+}
+
+/* ----------------main----------------------- */
+main img{width: 100%;}
+
+
+/* ----------------footer----------------------- */
+.button{
+  border: 1px solid #aaaaaa;
+  height: 50px;
+  padding: 10px;
+  margin-top: 10px;
+
+  display: flex;   /* 자식들 정렬 시키기 위한 전제조건 */
+  justify-content: space-around;  /* 자식들 양쪽 균등정렬 시킴 */
+  align-items: center;  /* 자식들 세로 중앙정렬 시킴 */
+}
+.button a{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+.button img{
+  width: 60px; 
+  padding-right: 10px;
+  vertical-align: middle;   /* 이미지에 글자를 세로 중앙정렬 */
+}
+.order, .deliver{
+  width: 185px;
+}
+
+.line{
+  border-left: 1px solid #aaaaaa;
+  height: 50px;
+}
+
+
+
+

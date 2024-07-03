@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_링크_반응선택자</title>
+  <style>
+    link{color: #333333;}
+    a:visited{color:#333333; text-decoration: none;}
+
+    a{color:#333333; text-decoration: none;}
+
+    nav > a{
+      border: 2px solid #333333;
+      padding: 4px 20px; /* 위, 아래(4) 왼, 오른쪽(2) */
+      border-radius: 20px; /* 왼쪽 상단, 오른쪽 상단, 오른쪽 하단, 왼쪽 하단 (시계방향) */
+    }
+    /* 반응선택자 */
+    nav > a:hover{
+      background-color: #333333;
+      color: white;
+    }
+
+    .buy_btn{
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    .buy_btn:hover{
+      background-color: white;
+      color: #333333;
+    }
+    .buy_btn:active{
+      background-color: yellow;
+    }
+
+    div{
+      width: 450px;height: 600px;
+      border: 5px solid blue;
+      overflow: hidden;
+    }
+    img{
+      transition: 0.5s; /* 전환속성 : 마우스오버한 대상에 시간을 적용하여 부드럽게 움직이는 효과 */
+    }
+    img:hover{
+      filter: brightness(1.2); /* 필터효과 */
+      transform: scale(1.1); /* 변형속성 */
+    }
+
+
+  </style>
+</head>
+<body>
+  <h2>01_링크_반응선택자</h2>
+
+  <h3>6. 링크선택자</h3>
+  <p>href속성을 가진 태그요서(a), img, 다른 요소에 서식을 적용하기 위한 선택자로서 :link, :visited선택자가 있다.</p>
+  <p>선택자 앞에 ':'기호가 들어가는데 이러한 선택자를 '가상클래스'라고 함.</p>
+  <ul>
+    <li>:link - 링크가 걸린 상태의 요소를 선택하여 서식을 적용</li>
+    <li>:vistied - 링크가 걸린 요소를 한번이상 클릭한 적 있는 경우 서식을 적용</li>
+  </ul>
+  
+  <a href="http://www.naver.com" title="네이버">네이버</a>
+  <a href="http://www.daum.net" title="다음">다음</a>
+
+  <h3>7. 반응 선택자</h3>
+
+  <ul>
+    <li>:hover - 사용자가 마우스로 해당하는 요소에 올렸을 경우 서식을 적용</li>
+    <li>:active - 사용자가 마우스로 해당하는 요소를 클릭하고 있는 경우 서식을 적용</li>
+  </ul>
+  <nav>
+    <a href="#" title="매장픽업">매장픽업</a>
+    <a href="#" title="장바구니">장바구니</a>
+    <a href="#" title="구매하기" class="buy_btn">구매하기</a>
+    <a href="#" title="회원가입">회원가입</a>
+    <a href="#" title="로그인">로그인</a>
+  </nav>
+
+  <h3>이미지에 마우스 오버시 서식적용하기</h3>
+  <div>
+    <img src="./images/pc_casper_popup.jpg" alt="광고이미지">
+  </div>
+
+</body>
+</html>

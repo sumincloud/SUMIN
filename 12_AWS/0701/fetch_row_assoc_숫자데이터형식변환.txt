@@ -1,0 +1,8 @@
+product_del.php?no=1
+product_del.php?no=2 
+
+fetch_row      =>     echo row[0]
+fetch_assoc =>     echo row['mb_id']
+
+http://localhost/shop/cate.php?cate=cate02
+<?=NUMBER_FORMAT($price) ?>

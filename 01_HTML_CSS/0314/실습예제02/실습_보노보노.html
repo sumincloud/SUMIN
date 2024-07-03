@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_보노보노</title>
+  <style>
+    *{margin: 0;padding: 0;}
+
+    body{
+      font-size: 16px;
+    }
+    .book_01{
+      border: 2px solid #ccc;
+      width: 1000px;
+      height: 450px; 
+      padding: 50px 50px;
+      display: flex;  /* 자식 태그들을 1차원 배열로 만들어줌(세로배치 -> 가로배치) */
+    }
+    .book_txt{
+      margin-left: 50px;
+      line-height: 35px;
+    }
+    .book_img{
+      width: 250px;
+      height: 400px;
+    }
+    input:hover{
+      cursor: pointer;
+    }
+    
+
+
+
+
+    /* 혜택 아이콘 */
+    dl > dd{
+      display: inline;
+      border: 1px solid #888;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #333;
+    }
+    .today_book{
+      background-color: skyblue;
+      color: white;
+      border: 1px solid #298db4;
+    }
+
+    /* 책 설명 텍스트 */
+    h2{
+      color: #003f91;
+    }
+    .book_sub1{
+      color: #555;
+    }
+    .red{
+      color: red;
+    }
+    .review{
+      color: #003f91;
+      padding: 2px;
+      background-color: #fff;
+      border: 1px solid #888;
+      border-radius: 3px;
+    }
+    .subbox_01{
+      padding: 6px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+
+    /* 가운데 선 */
+    hr{
+      border: 1px solid #ccc;
+    }
+
+    /* 책 가격 박스 */
+    .big_red{
+      color: red;
+      font-size: 30px;
+    }
+    .navy{
+      color: #003f91;
+    }
+    .big_navy{
+      color: #003f91;
+      font-size: 24px;
+    }
+    .card{
+      padding: 2px;
+      background-color: #fff;
+      border: 1px solid #888;
+      border-radius: 3px;
+    }
+    .place{
+      padding: 8px 60px;
+      font-size: 18px;
+      line-height: 100px;
+      font-weight: bold;
+      background-color: #fff;
+      border: 1px solid #888;
+      text-decoration: none;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+  <form name="form1" method="post" action="#">
+  <div class="book_01">
+    <img src="./images/book.jpg" alt="책 이미지" class="book_img">
+    
+    <div class="book_txt">
+      <dl>
+        <dt></dt>
+        <dd class="today_book">오늘의책</dd>
+        <dd>이벤트</dd>
+        <dd>무료배송</dd>
+      </dl>
+      <h2>보노보노처럼 살다니 다행이야(특별판)</h2>
+      <p class="book_sub1">김신회 지음 | 이가라시 미키오 그림 | 놀 | 2017년 04월 06일 출간</p>
+      <span class="red">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span> 리뷰 82개
+      <input type="submit" value="리뷰쓰기" class="review">
+
+      <p>국내도서 주간베스트 <span class="red">13</span>위 | 시/에세이 주간베스트 <span class="red">4</span>위
+        <select class="subbox_01">
+          <option value="주요 일간지 북섹션 추천도서">주요 일간지 북섹션 추천도서</option>
+          <option value="목록1">목록1</option>
+          <option value="목록2">목록2</option>
+        </select>
+      </p>
+      <!-- 가운데 선 -->
+      <br><hr><br>
+      <!-- 책 가격 박스 -->
+      <p>정가 : 16,000원</p>
+      <p>판매가 : <span class="big_red"><b>14,400</b>원</span> <span class="navy">[<b>10%</b>&#x2193; <b>1,600</b>원 할인]</span></p>
+      <p>제휴할인가 : <span class="big_navy"><b>13,680</b>원</span> 교보-KB국민카드 5% 청구할인(실적무관) <input type="submit" value="카드/포인트 안내" class="card"></p>
+      <p>통합포인트 : <b>800</b>원 적립 <span class="navy">[<b>5</b>% 적립]</span></p>
+      <a href="#" class="place"><span class="red">영업점 재고&#x30FB;위치</span> ></a>
+    </div>
+  </div>
+  </form>
+</body>
+<p>
+  <a href="http://validator.kldp.org/check?uri=referer"
+    onclick="this.href=this.href.replace(/referer$/,encodeURIComponent(document.URL))"><img
+    src="//validator.kldp.org/w3cimgs/validate/html5-blue.png" alt="Valid HTML 5" height="15" width="80"></a>
+</p>
+
+<p>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px"
+          src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+          alt="올바른 CSS입니다!" />
+      </a>
+  </p>
+        
+
+</html>

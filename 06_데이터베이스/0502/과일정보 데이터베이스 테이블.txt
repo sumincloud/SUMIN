@@ -1,0 +1,48 @@
+* 테이블 생성하기
+
+----------------------------------------------------------
+varchar : 문자타입의 데이터
+int : 정수형 데이터
+primary key : 기본키(데이터의 중심이 되는 이름)
+---------------------------------------------------
+* 테이블 조회 : show tables;
+* 테이블 속성 조회 : desc fruit;
+* 데이터 삽입하기
+insert into 테이블명(필드명1) values ('값1');
+insert into fruit values('사과', 1000, 'Red', 'korea'); 
+insert into fruit values('복숭아', 2000, 'Pink', 'korea');
+insert into fruit values('자두', 2000, 'Red', 'korea');
+insert into fruit values('멜론', 500, 'Green', 'korea');
+insert into fruit values('바나나', 5000, 'Yellow', 'korea');
+insert into fruit values('토마토', 6000, 'Red', 'usa');
+insert into fruit values('바나나', 7000, 'Yellow', 'indonesia');
+insert into fruit values('키위', 8000, 'Green', 'new zealand');
+insert into fruit values('파인애플', 9000, 'Green', 'indonesia');
+insert into fruit values('수박', 10000, 'Green', 'china');
+-------------------------------------
+* 데이터조회 : select * from fruit;
+* 테이블 삭제 : drop table 테이블명;
+* 테이블 데이터 조회 : select * from fruit;
+* data수정하기
+ update 테이블명 set 필드명='값' where 필드명='값';
+ update fruit set country='korea' where country='????';
+-------------------------------------
+1. 테이블 생성
+2. 테이블 조회
+3. 테이블 데이터 삽입
+4. 테이블 데이터 조회
+5. php문서를 활용하여 데이터베이스 연결하고 데이터 출력
+6. php문서를 활용하여 입력양식을 통해 데이터 입력
+
+
+
+
+
+
+
+
+
+
+
+
+

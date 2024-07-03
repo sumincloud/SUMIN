@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리_애니메이트 메소드 사용하기</title>
+  <style>
+    .circle{
+      width:100px;height:100px;
+      border-radius:50%;
+      background:#0f0;
+      line-height:100px;text-align:center;
+      position: relative;
+    }
+    /* 
+      마우스오버에 동작 애니메이션 transition 
+      자동움직이는 애니메이션 @keyframes{ 내용 }
+    */
+    #tube{position: relative;}
+    .box1{
+      background: red;
+      width: 50px;height: 50px;
+      position: relative;
+      margin-bottom: 10px;
+      list-style: none;
+    }
+
+    .baemin{position: relative;left: 0;}
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      //1. 변수선언
+      const c = $('.circle');
+      
+      //2. 애니메이션 동작
+      //c.animate({'left':'800px'},1000).animate({'top':'300px'},500).animate({'left':'0px'},200).animate({'top':'0px'},1000);
+
+      //3. 버튼 이벤트를 이용하여 애니메이션 제어하기
+      $('#start_btn').click(function(){
+        c.animate({'left':'800px'},1000).animate({'top':'300px'},500).animate({'left':'0px'},200).animate({'top':'0px'},1000, function(){alert('애니메이션 종료');});
+      })
+      $('#stop_btn').click(function(){
+        c.stop(); //클릭시 animate 1개 메서드 중지
+      })
+
+      //상하좌우 버튼 클릭시 해당 값 만큼 증가, 감소되면서 캐틱처 이동하기
+      //이동하기 위한 기본값
+      let move = 50;
+      
+      //버튼 클릭시 각각 기본값에 증가,감소되면서 캐릭터 이동하기
+      $('#l_btn').click(function(){
+        $('#tube').animate({'left':'-='+move},500)
+      })
+      $('#r_btn').click(function(){
+        $('#tube').animate({'left':'+='+move},500)
+      })
+      $('#t_btn').click(function(){
+        $('#tube').animate({'top':'-='+move},500)
+      })
+      $('#b_btn').click(function(){
+        $('#tube').animate({'top':'+='+move},500)
+      })
+
+      //박스 목록에 마우스 오버시
+      $('.box1').hover(function(){
+        //우측으로 이동
+        $(this).animate({'left':'600px'},1000)
+      }, function(){
+        //다시 제자리로 이동
+        $(this).animate({'left':'0px'},500)
+      })
+
+    });
+  </script>
+</head>
+<body>
+  <h2>제이쿼리_애니메이트 메소드 사용하기</h2>
+  <p>제이쿼리에서는 효과와 애니메이트 메소드를 사용하여 사용자가 선택한 요소를 다양하게 움직이게 만들 수 있다.</p>
+
+  <h3>1. animate메서드 사용법</h3>
+  <p>$('선택자').animate({'속성':'값'},시간, 가속도, 콜백함수);</p>
+  <ul>
+    <li>속성:값 - css속성과 값을 말하며, '값'에는 자바스크립트 변수나 연산자를 활용할 수 있다.</li>
+    <li>시간 : 1/1000=1초값을 의미함.</li>
+    <li>콜백함수 : callback function으로서 애니메이션 동작이 끝나고 나서 다음 동작을 이어사 실행하고자 할 때 사용한다.</li>
+  </ul>
+  
+  <h3>2. animate메서드를 사용하여 박스 움직이게 하기</h3>
+  <div class="circle">원</div>
+  <input type="button" value="애니메이션 시작" id="start_btn">
+  <input type="button" value="애니메이션 종료" id="stop_btn">
+
+  <h3>3. 자바스크립트 절대값을 활용하여 캐릭터 움직이기</h3>
+  <img src="./images/KakaoTalk.gif" alt="카카오캐릭터" id="tube"><br>
+  <input type="button" id="l_btn" value="&larr;">
+  <input type="button" id="r_btn" value="&rarr;">
+  <input type="button" id="t_btn" value="&uarr;">
+  <input type="button" id="b_btn" value="&darr;">
+
+  <h3>4. box에 마우스 오버시  순차적으로 애니메이션 적용하기</h3>
+  <ul>
+    <li class="box1"></li>
+    <li class="box1"></li>
+    <li class="box1"></li>
+    <li class="box1"></li>
+    <li class="box1"></li>
+  </ul>
+
+  <h3>5. easing값을 사용하여 속도감있는 애니메이션 적용하기</h3>
+  <p>jquery.com 사이트의 왼쪽 상단의 ui탭을 클릭하고 왼쪽 easing메뉴에서 jquery.ul 라이브러리를 찾아 연결하여 사용한다.</p>
+  <img src="./images/easing.png" alt="속도감주기"><br>
+  <img src="./images/baemin.png" alt="배달하기" id="baemin01" class="baemin"><br>
+  <img src="./images/baemin.png" alt="배달하기" id="baemin02" class="baemin"><br>
+  <img src="./images/baemin.png" alt="배달하기" id="baemin03" class="baemin"><br>
+  <img src="./images/baemin.png" alt="배달하기" id="baemin04" class="baemin"><br>
+  <img src="./images/baemin.png" alt="배달하기" id="baemin05" class="baemin"><br>
+
+  <input type="button" value="배달 주문~" id="order">
+
+  <!-- 제이쿼리 ui플러그인 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#order').click(function(){
+        $('#baemin01').animate({'left':'800px'},500,'linear') //거리와 속도가 일정(기본)
+        $('#baemin02').animate({'left':'800px'},500,'easeOutQuint')
+        $('#baemin03').animate({'left':'800px'},500,'easeOutBounce')
+        $('#baemin04').animate({'left':'800px'},500,'easeOutElastic')
+        $('#baemin05').animate({'left':'800px'},500,'easeOutExpo')
+      })
+    })
+  </script>
+
+  <h3>6. 실습예제</h3>
+  <div id="box02">
+    <img src="./exec01/images/jobs.png" alt="스티브잡스" id="jobs">
+    <img src="./exec01/images/jobs_text.gif" alt="스티브잡스 글자" id="jobs_text">
+  </div>
+  <style>
+    #box02{
+      width: 500px;height: 278px;
+      border: 3px solid black;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    #jobs_text{
+      position: absolute;
+      top: 80px;
+      left: -200px;
+    }
+    #jobs{
+      position: absolute;
+      bottom: -300px;
+      right: 0px;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#jobs_text').animate({'left':'20px'},500,'easeOutQuint')
+      $('#jobs').animate({'bottom':'0px'},600)
+    })
+  </script>
+
+</body>
+</html>

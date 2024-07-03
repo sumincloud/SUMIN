@@ -1,0 +1,75 @@
+shop 데이터베이스 생성
+
+create database '데이터베이스명';
+create database 'shop';
+
+1. 회원정보 - member테이블 생성
+create table members (
+  no int(6) auto_increment primary key,
+  mb_id varchar(20) not null,
+  mb_name varchar(30) not null,
+  mb_password varchar(255) not null,
+  mb_password2 varchar(255) not null,
+  mb_email varchar(255) not null,
+  mb_address varchar(255) not null,
+  mb_phone varchar(11) not null,
+  datetime datetime DEFAULT current_timestamp()
+);
+insert into members values(1, 'test', '홍길동', '1234', '1234', 'abcd@naver.com','서울시 종로구', '01012342222', '2024-06-27');
+---------------------------------------
+2. 상품정보 - shop_data         번호, 카테고리, 이미지, 상품명, 보조설명, 가격, 설명, 메모, 날짜
+create table shop_data(
+ no int(6) auto_increment primary key,
+ cate varchar(100) DEFAULT NULL,
+ img varchar(255) not null,
+ name varchar(20) not null,
+ parent varchar(20) not null,
+ price double not null,
+ comment varchar(500) not null,
+ memo varchar(255) not null,
+ datetime datetime DEFAULT current_timestamp() 
+)
+
+insert into shop_data values(1, 'cate01', './images/abc.jpg', '상품명', '보조설명', 5000, '설명', '메모', '2024-06-27');
+---------------------------------------
+3. 장바구니 - shop_temp=cart     번호, 상품명, 보조설명, 개수, 가격, 총가격, 이미지, 메모,  세션아이디, 날짜
+create table shop_temp (
+ no int(6) auto_increment primary key,
+ name varchar(20) not null,
+ parent varchar(20) not null,
+ count varchar(10) not null,
+ price double not null,
+ money double not null,
+ img varchar(255) not null,
+ comment varchar(500) not null,
+ seesion_id varchar(20) not null,
+ datetime datetime DEFAULT current_timestamp() 
+)
+insert into shop_temp values(1, '상품명', '보조설명', '100', 15000, 50000, './images/abc.jpg', '메모', 'jeon98978', '2024-06-27' );
+---------------------------------------
+4. 상품 리스트(주문자가 주문을 하기 위한 목록) - shop_list  번호, 상품명, 이메일주소, 전화번호, 주소, 설명, 총합계, 날짜
+create table shop_list (
+ order_no int(6) auto_increment primary key,
+ name varchar(20) not null,
+ email varchar(255) not null,
+ phone varchar(11) not null,
+ address varchar(255) not null,
+ memo varchar(255) not null,
+ total double not null,
+ datetime datetime DEFAULT current_timestamp()
+)
+
+insert into shop_list values(1, '상품명', 'abd@naver.com', '01012345678', '서울시 종로구', '메모', 50000, '2024-0627');
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

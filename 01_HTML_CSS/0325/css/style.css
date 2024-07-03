@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body{
+  font-family: "맑은 고딕", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+ul, li{list-style: none;}
+a{text-decoration: none; color: #333;}
+h2, h3, p, dl{padding: 10px;}
+
+
+/* 1. 세로 내비게이션 */
+
+.gnb01{width: 300px; background-color: #ccc;}
+.gnb01 ul{} 
+.gnb01 ul li{
+  line-height: 40px;
+  border-bottom: 1px solid black;
+  text-indent: 10px;
+}
+.gnb01 ul li a{
+  display: block;
+}
+.gnb01 ul li a:hover{
+  background-color: #a8a8a8;
+}
+
+
+/* 2. 가로 내비게이션 */
+
+.gnb02{
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+.gnb02 ul{
+  display: flex;
+  justify-content: space-around;  /* 적정한 간격으로 띄워줌 */
+}
+.gnb02 ul li{line-height: 50px;}
+.gnb02 ul li a{
+  display: block;
+  font-weight: bold;
+  padding: 0 30px;
+  background-color: yellow;
+  font-size: 16px;
+}
+.gnb02 ul li a:hover{color: green;}
+.gnb02 ul li a:hover::after{
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+}
+

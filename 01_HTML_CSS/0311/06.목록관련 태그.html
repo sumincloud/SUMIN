@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <title>06.목록관련 태그</title>
+</head>
+<body>
+ <h2>06.목록관련 태그</h2>
+ <p>목록이란? 관련있는 주제에 맞는 내용을 나열하고자 할 때 사용하며, 목록관련 태그에는 정의목록, 순차목록, 비순차목록이 있다.</p>
+
+ <h3>1. 정의목록</h3>
+ <p>용어에 대한 정의를 내릴 때 사용하며 dl(definition list), dt(definition term), dd(definition description)태그로 작성한다. 절대 순서가 바뀌면 안된다.</p>
+    <dl>
+        <dt>html이란?</dt>
+        <dd>HyperText Markup Language의 약자로서 '웹문서의 구조를 만들기 위한 언어'이다.</dd>
+        <dd>태그라고 하는 명령어를 사용하여 문서를 작성한다.</dd>
+        <dd>문법이 간단하기 때문에 누구나 쉽게 익힐 수 있다.</dd>
+        <dd>문서 작성하고 저장 시 반드시 확장사는 .html 또는 .htm으로 저장한다.</dd>
+        <dd>가장 최신 버전은 html5이다.</dd>
+    </dl>
+
+    <dl>
+        <dt>신발</dt>
+        <dd>전체보기</dd>
+        <dd>조던 신발</dd>
+        <dd>러닝 신발</dd>
+        <dd>농구 신발</dd>
+    </dl>
+
+    <dl>
+        <dt>회사소개</dt>
+        <dd>인사말</dd>
+        <dd>연혁</dd>
+        <dd>조직도</dd>
+        <dd>오시는 길</dd>
+    </dl>
+
+    <dl>
+        <dt>Q1. 질문</dt>
+        <dd>A. 답변내용</dd>
+        <dt>Q2. 질문</dt>
+        <dd>A. 답변내용</dd>
+        <dt>Q3. 질문</dt>
+        <dd>A. 답변내용</dd>
+    </dl>
+
+
+ <h3>2. 순차목록</h3>
+    <p>순차목록은 순서가 있는 목록으로서 order list의 약자인 ol, li 태그요소를 사용하며 type속성을 사용하며 숫자, 영문 대소문자, 로마자 대소문자로 기호를 변경할 수 있다.</p>
+
+    <ol>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+    </ol>
+
+    <ol type='i'>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+    </ol>
+
+    <ol type='a'>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+       <li>순서있는 목록</li>
+    </ol>
+
+    <p>위키백과, 영화랭킹, 실시간 순위, 게시판 목록 등의 콘텐츠 작성시 사용한다.</p>
+
+ <h3>3. 비순차목록</h3>
+    <p>순서가 없는 목록으로서 unorder list의 약자인 ul, li 태그를 사용하며, type속성을 사용하면 circle, disc(기본값), square모양으로 변경이 가능함.</p>
+
+    <ul>
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+    </ul>
+
+    <ul type="circle">
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+    </ul>
+
+    <ul type="square">
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+       <li>순서없는 목록</li>
+    </ul>
+
+    <p>네이버 홈페이지의 메인메뉴, 뉴스 스탠드, 추천, 구독, 상품목록, 이미지 목록, 날씨정보, 주식정보, 이미지 슬라이드, 푸터영역의 회사소개 메뉴 목록, 쇼핑몰 메뉴, 이미지 갤러리, 글목록</p>
+
+ <h3>목록 안에 또 다른 목록 - 이중목록</h3>
+   <ul>
+      <li>소속박물관 바로가기
+         <ul>
+            <li>국립경주박물관</li>
+            <li>국립광주박물관</li>
+         </ul>
+      </li>
+       <li>Language
+         <ul>
+            <li>Korean</li>
+            <li>English</li>
+            <li>Japanese</li>
+         </ul>
+      </li>
+   </ul>
+    
+
+
+</body>

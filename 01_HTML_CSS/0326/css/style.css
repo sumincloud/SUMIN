@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+.list01 > li:first-child{
+  background-color:rgba(0,255,255,1);
+}
+.list01 > li:nth-child(2){
+  background-color:rgba(0,255,255,.8);
+}
+.list01 > li:nth-child(3){
+  background-color:rgba(0,255,255,.6);
+}
+.list01 > li:nth-child(4){
+  background-color:rgba(0,255,255,.4);
+}
+.list01 > li:nth-child(5){
+  background-color:rgba(0,255,255,.2);
+}
+.list01 > li:last-child{
+  background-color:rgba(0,255,255,.1);
+}
+
+/* 그라디언트 */
+.box01, .box02, .box03{width:200px;height:50px;}
+.box01{background:linear-gradient(#f00,#ff0);}
+.box02{background:radial-gradient(#f00,#ff0);}
+.box03{
+  /* css그라디언트 검색하여 소스코드 삽입함. */
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%);
+}
+
+/* 배경이미지 삽입 */
+.box04{
+  width:100%;height:300px;
+  background:url('../img/back.jpg');
+}
+.box05{
+  width:100%;height:300px;
+  background:url('../img/back.jpg');
+  /* background-repeat: no-repeat; */
+  /* background-repeat: repeat-x; */
+  background-repeat: repeat-y;
+}
+.box06{
+  width:100%;height:300px;
+  background:url('../img/back.jpg');
+  /* background-size:300px; */
+  /* background-size:300px 150px; */
+  background-size:100%;
+}
+.box07{
+  width:100%;height:300px;
+  background:url('../img/back.jpg');
+  /* background-position: center; */
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+.box08{
+  width:100%;height:300px;
+  background:url('../img/back.jpg');
+  border:15px solid #000;
+  /* background-origin: content-box; */
+  /* 테두리선과 이미지가 겹치지 않음 */
+  background-origin: border-box;
+}
+.box09{
+  width:100%;height:500px;
+  background:url('../img/back.jpg');
+  background-attachment: fixed;
+}
+.box10{
+  width:100%;height:300px;
+  background:url('../img/back.jpg') no-repeat left, url('../img/menu.gif') no-repeat right;
+}
+
+
+h1{
+  width:50px;height:50px;
+  border:2px solid #000;
+  background:url('../img/sp_main.2b96eea2.png');
+  background-position:-249px -712px;
+}
+h1 > a{
+  /* display:none; */
+  display:inline-block;
+  width:50px;height:50px;
+  text-indent:-9999px;
+  /* opacity: 0; 두번째 방법 */
+}

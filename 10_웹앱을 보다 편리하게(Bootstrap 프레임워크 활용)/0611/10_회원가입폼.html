@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_회원가입폼</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body{
+      background: rgb(227, 242, 248);
+    }
+    #sign{
+      margin: 50px auto;
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="sign" class="col-md-7 col-lg-8">
+    <h4 class="mb-3">회원가입</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">이름</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+          <div class="invalid-feedback">
+            이름을 입력해주세요.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">성</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+          <div class="invalid-feedback">
+            성을 입력해주세요.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="username" class="form-label">닉네임</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" id="username" placeholder="Username" required>
+          <div class="invalid-feedback">
+              닉네임을 입력해주세요.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">이메일 <span class="text-body-secondary">(선택사항)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            이메일 양식에 맞게 입력해주세요.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="password" class="form-label">비밀번호</label>
+          <input type="password" class="form-control" id="password" placeholder="1 ~ 8자리" maxlength="8">
+          <div class="invalid-feedback">
+            비밀번호를 입력해주세요.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="password_check" class="form-label">비밀번호 확인</label>
+          <input type="password" class="form-control" id="password_check" placeholder="다시 한 번 입력해주세요." maxlength="8">
+          <div class="invalid-feedback">
+            비밀번호가 일치하지 않습니다.
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <label for="country" class="form-label">도/시</label>
+          <select class="form-select" id="country" required>
+            <option value="">도/시</option>
+            <option value="서울특별시">서울특별시</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+          </select>
+          <div class="invalid-feedback">
+            도/시 지역을 선택해주세요.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="state" class="form-label">구</label>
+          <select class="form-select" id="state" required>
+            <option value="">구/읍/동</option>
+            <option value="종로구">종로구</option>
+            <option value="노원구">노원구</option>
+            <option value="지행동">지행동</option>
+          </select>
+          <div class="invalid-feedback">
+            구/읍/동 지역을 선택해주세요.
+          </div>
+        </div>
+
+      <hr class="my-4">
+
+      <button class="w-50 btn btn-secondary btn-lg" type="reset">취소하기</button>
+      <button class="w-50 btn btn-primary btn-lg" type="submit" id="signIn">가입하기</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    //비밀번호 확인에 입력할때마다 함수실행
+    $('#password_check').keyup(function() {
+      validatePassword();
+    });
+
+    function validatePassword() {
+      const password = $('#password').val();
+      const password_check = $('#password_check').val();
+
+      if (password === '' || password_check === '') {
+        if (password === '') {
+          $('#password').addClass('is-invalid');
+        } else {
+          $('#password').removeClass('is-invalid');
+        }
+
+        if (password_check === '') {
+          $('#password_check').addClass('is-invalid');
+        } else {
+          $('#password_check').removeClass('is-invalid');
+        }
+      } else if (password !== password_check) {
+        $('#password_check').addClass('is-invalid');
+      } else {
+        $('#password').removeClass('is-invalid');
+        $('#password_check').removeClass('is-invalid');
+      }
+    }
+
+
+
+    $('#signIn').click(function(e) {
+      // 폼의 기본 동작인 submit을 막음
+      e.preventDefault();
+      validateCheck();
+    });
+
+    $('input').keyup(function() {
+      // input에 입력할때마다 함수체크
+      validateCheck();
+    });
+    $('select').change(function() {
+      // select에 입력할때마다 함수체크
+      validateCheck();
+    });
+
+
+
+    function validateCheck() {
+
+      const firstName = $('#firstName').val();
+      const lastName = $('#lastName').val();
+      const username = $('#username').val();
+      const password = $('#password').val();
+      const passwordCheck = $('#password_check').val();
+      const country = $('#country').val();
+      const state = $('#state').val();
+
+      if (firstName === '') {
+        $('#firstName').addClass('is-invalid');
+      } else {
+        $('#firstName').removeClass('is-invalid');
+      }
+
+      if (lastName === '') {
+        $('#lastName').addClass('is-invalid');
+      } else {
+        $('#lastName').removeClass('is-invalid');
+      }
+
+      if (username === '') {
+        $('#username').addClass('is-invalid');
+      } else {
+        $('#username').removeClass('is-invalid');
+      }
+
+      if (password === '') {
+        $('#password').addClass('is-invalid');
+      } else {
+        $('#password').removeClass('is-invalid');
+      }
+
+      if (passwordCheck === '' || password !== passwordCheck) {
+        $('#password_check').addClass('is-invalid');
+      } else {
+        $('#password_check').removeClass('is-invalid');
+      }
+
+      if (country === '') {
+        $('#country').addClass('is-invalid');
+      } else {
+        $('#country').removeClass('is-invalid');
+      }
+
+      if (state === '') {
+        $('#state').addClass('is-invalid');
+      } else {
+        $('#state').removeClass('is-invalid');
+      }
+    }
+
+    
+  });
+  </script>
+</body>
+</html>

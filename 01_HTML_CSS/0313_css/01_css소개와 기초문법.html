@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_css소개와 기초문법</title>
+	<!-- 1. 내부스타일 서식 -->
+	<style>
+		h2{
+			font-family: "궁서체";
+			font-size: 20px;
+			color: blue;
+		}
+		h3{
+			font-size: 18px;
+			color: red;
+		}
+	</style>
+
+	<!-- 2. 외부스타일 서식 -->
+	<link rel="stylesheet" href="./css/style.css" type="text/css">
+
+
+</head>
+<body>
+  <h2>01_css소개와 기초문법</h2>
+  <p>css는 Cascading Style Sheets의 약자로서 html문서의 내용에 서식을 적용하기 위한 언어로서 미국의 '에릭 메이어'라는 개발자에 의해서 개발된 언어이다.</p>
+  <p>현재까지 css level3까지 나온 상태로서 웹문서의 레이아웃, 그림자효과, 애니메이션 등의 동적인 콘텐츠도 개발이 가능한 상태이다.</p>
+  <p>다양한 사용자 환경에서 동일한 내용을 볼 수 있게 표현해주는 언어로서 웹표준 제작시 필수언어이다.</p>
+
+  <h3>1. css문법</h3>
+  <p>css언어는 기본적으로 head와 head사이에 style선언 또는 link태그를 사용하여 외부서식을 연결할 수 있다.</p>
+  <p>css문법 - 선택자{속성 : 값;}</p>
+  <ul>
+		<li>선택자(selector) - 서식을 적용하기 위한 하나의 방법, 수단을 말하며 대략 50가지 정도가 있다.</li>
+		<li>속성(property) - 속성이란? 서식의 종류로서 사용자가 선택한 요소에 글자색, 배경색, 크기, 여백, 위치, 애니메이션 등의 내용을 적용하기 위한 서식을 말함.</li>
+		<li>값(value) - 속성을 사용하여 어떤 서식을 적용하기 위한 내용을 말함. 예)font-size:12px;</li>
+  </ul>
+
+	<h3>2. css특징</h3>
+	<p>css는 1) 모든 문서에 동일한 서식을 만들 수 있으며, 2) 어느 환경에서나 사용자가 의도한대로 디자인을 구현할 수 있다. 3) 유지보수 측면에서 편리한 장점이 있다.</p>
+
+	<h3>3. css주석</h3>
+	<p>html태그와 같이 주석을 사용할 수 있는데, /* 주석내용 */ 이렇게 작성한다.</p>
+	<ol>
+		<li>내부스타일 : 현재 작성하고 있는 html문서에서만 서식을 적용하기 위한 방법으로 head태그안에 style선언하여 작성한다.</li>
+		<li>외부스타일 : 별도의 css문서를 작성하여 html문서에 link태그를 사용하여 다음 서식을 적용한다. 여러 html문서에 동일한 서식을 적용할 때 유용하며 웹제작시 가장 많이 사용하는 방법.</li>
+		<li>인라인 스타일 : <span style="background-color: greenyellow;">html문서안에 있는 태그요소에 직접 스타일 서식</span>을 적용하기 위한 방법으로서 주로 테스트용으로 사용된다.</li>
+		<li></li>
+	</ol>
+  
+</body>
+</html>

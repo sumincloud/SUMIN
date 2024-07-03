@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경주로ON - 로그인</title>
+  <!-- 부트스트랩 아이콘 cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- 폰트어썸 아이콘 cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./css/reset.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+    /* 4787ff */
+    i{color: #000;}
+    a{text-decoration: none;}
+
+    /* 헤더 서식 */
+    header{
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      font-size: 1rem;
+      background: white;
+      position: fixed;
+      width: 100%;
+    }
+    header span{font-weight: bold;line-height: 40px;}
+    header a{
+      width: 40px;height: 40px;
+      display: block;
+      text-align: center;
+    }
+    header a i{line-height: 40px;}
+
+    /* 메인 서식 */
+    .logo{
+      width: 150px;
+      margin-top: 50px;
+    }
+    .login_large_txt{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    #email, #pw{
+      height: 50px;
+    }
+
+    #showPassword{
+      position: absolute;
+      right: 0; top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    #login{
+      background: #4787ff;
+      height: 50px;
+      color: white;
+    }
+    #easy_login{
+      margin-bottom: 100px;
+    }
+
+
+
+    /* 하단 바텀바 서식 */
+    nav{
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      border-radius: 20px 20px 0 0;
+      background: white;
+    }
+    ul{
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+    ul li{
+      text-align: center;
+      width: 60px; height: 60px;
+      line-height: 60px;
+    }
+    a{display: block;}
+    ul li i{
+      font-size: 1.5rem;
+    }
+    ul li:nth-of-type(3) i{
+      color: #4787ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" title="뒤로가기">
+      <i class="bi bi-chevron-left"></i>
+    </a>
+    <span>로그인</span>
+    <a href="#" title="홈으로">
+      <i class="bi bi-house"></i>
+    </a>
+  </header>
+
+  <!-- 메인서식 -->
+  <main>
+
+    <div class="p-5">
+
+      <div>
+        <div class="login_txt_wrap">
+          <div class="logo mb-4"><img src="./images/logo.svg" alt="로고"></div>
+          <div class="login_large_txt">함께 여행을 떠나볼까요?</div>
+          <div class="login_small_txt text-secondary mb-5">로그인이 필요한 서비스에요</div>
+        </div>
+        <div class="login_form">
+          <form action="#" id="loginForm" name="loginForm" method="post">
+            <div class="fs-4 mb-2">
+              <label for="email" class="form-label fw-bold fs-6">아이디</label>
+              <input type="email" class="form-control" name="id" id="email" placeholder="이메일을 입력해주세요" value="">
+              <div class="invalid-feedback">
+                아이디를 입력해주세요.
+              </div>
+            </div>
+            <div class="fs-4 mb-4">
+              <label for="pw" class="form-label fw-bold fs-6">비밀번호</label>
+              <small class="d-block text-secondary" style="font-size: 14px;">8자 이상의 영문,숫자,특수문자(!@#$%&amp;)사용</small>
+              <div style="position: relative;">
+                <input type="password" class="form-control" name="password" id="pw" placeholder="비밀번호를 입력해 주세요">
+                <button type="button" id="showPassword">
+                  <i class="fa-solid fa-eye fs-6" style="line-height: 34px; color: #4787ff;" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              8자 이상의 영문,숫자,특수문자(!@#$%&amp;)사용
+            </div>
+          </form>
+        </div>
+        <div class="container text-center fs-5 mb-4">
+          <div class="row fs-6" style="text-wrap: nowrap;">
+            <div class="col border-end"><a href="#" class="link-secondary">아이디 찾기</a></div>
+            <div class="col border-end"><a href="#" class="link-secondary">비밀번호 찾기</a></div>
+            <div class="col"><a href="#" class="link-secondary">회원가입</a></div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 mb-5">
+          <button id="login" class="btn" type="submit">로그인</button>
+        </div>
+        <div class="fs-6 mb-3">
+          <div class="text-center text-secondary mb-2">간편로그인</div>
+        </div>
+        <div class="container text-center fs-5" id="easy_login">
+          <div class="row">
+            <div class="col">
+              <a href="javascript:void(0);" class="link-secondary" onclick="kakaoLogin()">
+                <img src="./images/login_kakao.png" alt="카카오톡 로그인">
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="link-secondary">
+                <img src="./images/login_naver.png" alt="네이버 로그인">
+              </a>
+            </div>
+            <div class="col">
+              <a href="#" class="link-secondary">
+                <img src="./images/icon_goggle.png" alt="구글 로그인">
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- 하단 바텀바 -->
+  <nav>
+    <ul>
+      <li>
+        <a href="#">
+          <i class="bi bi-house"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bi bi-bookmark"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bi bi-geo-alt-fill"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bi bi-person"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bi bi-list"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- 카카오 로그인 -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('eae1a42f5aae28538a34a719867bc196');
+    // sdk초기화여부판단 
+    console.log(Kakao.isInitialized());
+    //카카오로그인 
+    function kakaoLogin() {
+      //Kakao.Auth.authorize()
+      Kakao.Auth.login({
+        success: function (response) {
+          Kakao.API.request({ 
+          url: '/v2/user/me', success: function (response) {
+              console.log(response)
+              }, fail: function (error) { 
+              console.log(error)
+              }, 
+            })
+            }, fail: function (error) { 
+            console.log(error) 
+          }, 
+        }) 
+      } 
+    //카카오로그아웃 
+    function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) { 
+      Kakao.API.request({
+      url: '/v1/user/unlink',
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+    // Kakao.API.request({ 
+    // url: '/v1/user/unlink', success: function (response) { 
+    // console.log(response) 
+    // }, fail: function (error) { 
+    //   console.log(error) }, 
+    //});
+      Kakao.Auth.setAccessToken(undefined) 
+    }}
+  </script>
+</body>
+</html>
