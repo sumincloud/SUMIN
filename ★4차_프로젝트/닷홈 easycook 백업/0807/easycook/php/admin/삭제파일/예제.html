@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendar CSS Styling Example</title>
+<style>
+    /* 기본 스타일 */
+    .calendar {
+        font-family: Arial, sans-serif;
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    .month {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .day {
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #eee;
+        cursor: pointer;
+    }
+    .special-day {
+        background-color: lightblue;
+        font-weight: bold;
+    }
+    .selected-day {
+        background-color: lightgreen;
+    }
+</style>
+</head>
+<body>
+
+<div class="calendar">
+    <div class="month">July 2024</div>
+    <div class="days" id="calendarDays">
+        <!-- JavaScript로 동적으로 날짜를 추가할 예정 -->
+    </div>
+</div>
+
+<script>
+// 예시로 사용할 날짜 데이터 배열
+var dates = [
+    { date: "2024-07-13", content: "Event 1" },
+    { date: "2024-07-20", content: "Event 2" },
+    { date: "2024-07-24", content: "Event 3" },
+];
+
+// 월별 날짜 계산 함수
+function getDaysInMonth(year, month) {
+    return new Date(year, month, 0).getDate();
+}
+
+// 날짜를 기준으로 HTML을 생성하여 추가하는 함수
+function renderCalendar() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1; // 월은 0부터 시작하므로 +1 해줌
+
+    var daysInMonth = getDaysInMonth(year, month);
+    var firstDayOfMonth = new Date(year, month - 1, 1).getDay(); // 월의 첫날의 요일 (0: 일요일, ..., 6: 토요일)
+
+    var calendarDays = document.getElementById("calendarDays");
+    calendarDays.innerHTML = ""; // 초기화
+
+    // 요일 헤더 추가
+    var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    daysOfWeek.forEach(function(day) {
+        var dayHeader = document.createElement("div");
+        dayHeader.classList.add("day");
+        dayHeader.textContent = day;
+        calendarDays.appendChild(dayHeader);
+    });
+
+    // 첫번째 날짜 전까지 빈 칸 추가
+    for (var i = 0; i < firstDayOfMonth; i++) {
+        var emptyDay = document.createElement("div");
+        emptyDay.classList.add("day");
+        calendarDays.appendChild(emptyDay);
+    }
+
+    // 날짜 추가
+    for (var day = 1; day <= daysInMonth; day++) {
+        var date = new Date(year, month - 1, day).toISOString().slice(0, 10);
+
+        var dateItem = document.createElement("div");
+        dateItem.classList.add("day");
+        dateItem.textContent = day;
+
+        // 클릭 이벤트 추가하여 날짜별 서식 변경
+        dateItem.addEventListener("click", function() {
+            // 이전에 선택된 요소의 클래스 제거
+            var selectedDay = document.querySelector(".selected-day");
+            if (selectedDay) {
+                selectedDay.classList.remove("selected-day");
+            }
+            // 현재 클릭한 요소에 클래스 추가
+            this.classList.add("selected-day");
+        });
+
+        // 특정 날짜에 대해 클래스를 추가하여 CSS 서식을 다르게 함
+        if (dates.find(item => item.date === date)) {
+            dateItem.classList.add("special-day");
+        }
+
+        calendarDays.appendChild(dateItem);
+    }
+}
+
+// 페이지 로드 시 실행
+document.addEventListener("DOMContentLoaded", function() {
+    renderCalendar();
+});
+</script>
+
+</body>
+</html>

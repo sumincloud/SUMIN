@@ -1,0 +1,176 @@
+  <!-- 부트스트랩 css연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <!-- 부트스트랩 js연결하기 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 부트스트랩 아이콘폰트 연결 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" type="text/css">
+  <!-- 스와이퍼 css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css">
+  <!-- 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- 아이콘폰트 연결 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" type="text/css" >
+  <!-- 초기화서식 연결 -->
+  <link rel="stylesheet" href="../../css/admin/reset.css" style="text/css">
+  <!-- 베이스서식 연결 -->
+  <link rel="stylesheet" href="../../css/admin/base.css" style="text/css">
+  <!-- 공통서식 연결 -->
+  <link rel="stylesheet" href="../../css/admin/common.css" style="text/css">
+  <!-- 메인서식 연결 -->
+  <link rel="stylesheet" href="../../css/admin/main.css" style="text/css">
+  <!-- style.scss 연결 -->
+  <link rel="stylesheet" href="../../css/admin/style.css">
+  <!-- admin 스크립트 연결 -->
+  <script src="../../script/admin/admin.js"></script>
+  <!-- 미디어 쿼리 서식연결 -->
+  <link rel="stylesheet" href="../../css/admin/media.css" type="text/css">
+
+  
+  <!-- 파비콘 -->
+  <!-- <link rel="manifest" href="../images/favicon/webmanifest.json"> -->
+  <link rel="apple-touch-icon" href="../../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../../favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../favicon/android-chrome-512x512.png">
+  <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+</head>
+<body>
+  <?php
+  include('../include/dbconn.php');
+  $s_id = $_SESSION['id'];   
+  $s_name = $_SESSION['name'];
+  
+  // 로그인 없이 강사페이지로 가지 못하게 하기
+  if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+    // 강사코드가 있다면 강사페이지로 이동한다.
+    if (!empty($_SESSION['teacher_code'])) {
+
+        } else { // 강사코드가 없다면 메인페이지로 이동한다.
+        echo "<script>alert('로그인 성공');</script>";
+        echo "<script>location.replace('../../index.php');</script>";
+    }
+  } else {
+    // 로그인 오류
+    echo "<script>alert('로그인이 필요한 페이지 입니다.');</script>";
+    echo "<script>location.replace('../../login.php');</script>";
+  }
+
+  // echo $s_id;
+  ?>
+  <!-- 헤더영역 :  로고, 로그아웃 -->
+  <!-- 로그인, 회원가입 끝나면 데이터 연결하기 -->
+  <header>
+    <!-- width: 427px모바일 이하에서의 토글메뉴 -->
+    <h1>
+      <a href="index.php" title="관리자 홈">
+        <img src="../../images/common/logo.png" alt="로고">
+      </a>
+      <div>
+        <!-- 토글 -->
+        <i class="bi bi-list" id="m_list"></i>
+      </div>
+    </h1>
+
+    <a href="../logout.php" title="로그아웃" class="admin_logout">
+      <img src="../../images/admin/logout.png" alt="로그아웃 그림"><br>
+      로그아웃
+    </a>
+    <!-- 네비게이션 : 메뉴 -->
+    <nav class="left_nav" id="left_nav">
+      <div>
+        <i class="bi bi-x-lg" id="close_m_list"></i>
+        <?php echo $s_name;?>님 안녕하세요.
+      </div>
+      <ul class="nav_inner" >
+        <li>         
+          <img src="../../images/admin/nav01.png" alt="마이페이지 그림">
+          <span>마이페이지</span>
+          <ul>
+            <li><a href="register.php" title="정보수정">정보수정</a></li>
+            <li><a href="vacation.php" title="휴가신청">휴가신청</a></li>
+          </ul>
+        </li>
+        <li>
+          <img src="../../images/admin/nav02.png" alt="학원 그림">
+          <span>학원</span>
+          <ul>
+            <li><a href="EC_notice.php" title="학원소식">학원소식</a></li>
+            <li><a href="reserve_list.php" title="실습실">실습실</a></li>
+          </ul>
+        </li>
+        <li>
+          <img src="../../images/admin/nav03.png" alt="강의관리 그림">
+          <span>강의관리</span>
+          <ul>
+            <li><a href="class_1.php" title="나의 강의실">나의 강의실</a></li>
+            <li><a href="class_create.php" title="강의 개설">강의 개설</a></li>
+          </ul>
+        </li>
+        <li>
+          <img src="../../images/admin/nav04.png" alt="학생관리 그림">
+          <span>학생관리</span>
+          <ul>
+            <li><a href="class_1.php" title="학생관리">학생 관리</a></li>
+            <li><a href="review_list.php" title="수강후기">수강 후기</a></li>
+          </ul>
+        </li>
+        <li>
+          <img src="../../images/admin/nav05.png" alt="게시판관리 그림">
+          <span>게시판관리</span>
+          <ul>
+            <li><a href="question_1.php" title="문의관리">문의관리</a></li>
+            <li><a href="notice_total.php" title="공지사항">공지사항</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- width: 1025이하에서의 네비게이션 : 메뉴 -->
+    <nav class="lnb left_nav2">
+      <ul class="nav_inner2">
+        <li>        
+          <a href="" title=""><img src="../../images/admin/nav01.png" alt="마이페이지 그림"></a>
+            <ul class="subMenu">
+              <li><span class="subMenu_title">마이페이지</span></li>
+              <li><a href="register.php" title="정보수정">정보수정</a></li>
+              <li><a href="vacation.php" title="휴가신청">휴가신청</a></li>
+            </ul>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/admin/nav02.png" alt="학원 그림"></a>
+          <ul class="subMenu">
+            <li><span class="subMenu_title">학원</span></li>
+            <li><a href="EC_notice.php" title="학원소식">학원소식</a></li>
+            <li><a href="reserve_list.php" title="실습실">실습실</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/admin/nav03.png" alt="강의관리 그림"></a>
+          <ul class="subMenu">
+            <li><span class="subMenu_title">강의관리</span></li>
+            <li><a href="class_1.php" title="나의 강의실">나의 강의실</a></li>
+            <li><a href="class_create.php" title="강의 개설">강의 개설</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/admin/nav04.png" alt="학생관리 그림"></a>
+          <ul class="subMenu">
+            <li><span class="subMenu_title">학생관리</span></li>
+            <li><a href="class_1.php" title="학생관리">학생 관리</a></li>
+            <li><a href="review_list.php" title="수강 후기">수강 후기</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/admin/nav05.png" alt="게시판관리 그림"></a>
+          <ul class="subMenu">
+            <li><span class="subMenu_title">게시판 관리</span></li>
+            <li><a href="question_1.php" title="문의관리">문의관리</a></li>
+            <li><a href="notice_total.php" title="공지사항">공지사항</a></li>
+        </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>

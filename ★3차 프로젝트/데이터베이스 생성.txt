@@ -1,0 +1,17 @@
+create database project;
+
+create table member(
+mb_no int(11) not null auto_increment,
+mb_id varchar(20) not null default '',
+mb_password varchar(255) not null default '',
+mb_name varchar(255) not null default '',
+mb_level varchar(11) not null default '',
+mb_tel varchar(20) not null default '',
+mb_email varchar(255) not null default '',
+mb_hobby varchar(255) not null default '',
+mb_job varchar(255) not null default '',
+mb_datetime datetime not null default current_timestamp,
+primary key (mb_no),
+unique key (mb_id),
+key mb_datetime (mb_datetime)
+)

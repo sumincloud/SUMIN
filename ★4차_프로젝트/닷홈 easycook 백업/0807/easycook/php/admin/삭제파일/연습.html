@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>동적 출석부 생성</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+
+<h2>출석부</h2>
+
+<div>
+  <input type="hidden" id="start-date" value="2024-07-01">
+  <input type="hidden" id="end-date" value="2024-07-31">
+  <button onclick="generateAttendance()">출석부 보기</button>
+</div>
+
+<table id="attendance-table">
+  <thead id="table-header">
+    <tr>
+      <th>번호</th>
+      <th>학생명</th>
+      <th>결석일</th>
+      <!-- 자바스크립트로 생성될 테이블 헤더 내용 -->
+    </tr>
+  </thead>
+  <tbody id="attendance-body">
+    <!-- 여기에 자바스크립트로 생성될 테이블 내용이 들어갈 예정입니다 -->
+  </tbody>
+</table>
+
+<div id="attendance-rate">
+  <h3>오늘의 출석률</h3>
+  <p id="today-attendance-rate">출석률: </p>
+</div>
+
+<script>
+function generateAttendance() {
+  var startDate = new Date(document.getElementById('start-date').value);
+  var endDate = new Date(document.getElementById('end-date').value);
+  
+  var tableHeader = document.getElementById('table-header');
+  tableHeader.innerHTML = ''; // 기존 헤더 내용 초기화
+
+  var headerRow = document.createElement('tr');
+  tableHeader.appendChild(headerRow);
+
+  var cellNumber = document.createElement('th');
+  cellNumber.textContent = '번호';
+  headerRow.appendChild(cellNumber);
+
+  var cellStudentName = document.createElement('th');
+  cellStudentName.textContent = '학생명';
+  headerRow.appendChild(cellStudentName);
+
+  var cellAbsentDate = document.createElement('th');
+  cellAbsentDate.textContent = '결석일';
+  headerRow.appendChild(cellAbsentDate);
+
+  var currentDate = new Date(startDate);
+  var today = new Date(); // 오늘 날짜 가져오기
+
+  // 테이블 헤더에 날짜 열 추가
+  while (currentDate <= endDate) {
+    var cellDate = document.createElement('th');
+    cellDate.textContent = currentDate.getDate() + '일';
+    headerRow.appendChild(cellDate);
+
+    // 다음 날짜로 이동
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  // 출석부 내용 생성
+  var tableBody = document.getElementById('attendance-body');
+  tableBody.innerHTML = ''; // 기존 내용 초기화
+  var rowNumber = 1;
+  for (var i = 0; i < 5; i++) { // 예시로 5명의 학생 데이터를 추가
+    var studentRow = document.createElement('tr');
+    tableBody.appendChild(studentRow);
+
+    var cellNumber = document.createElement('td');
+    cellNumber.textContent = rowNumber++;
+    studentRow.appendChild(cellNumber);
+
+    var cellStudentName = document.createElement('td');
+    cellStudentName.textContent = '학생 이름 ' + rowNumber;
+    studentRow.appendChild(cellStudentName);
+
+    var cellAbsentDate = document.createElement('td');
+    cellAbsentDate.textContent = ''; // 여기에 결석일 추가
+    studentRow.appendChild(cellAbsentDate);
+
+    currentDate = new Date(startDate); // 시작일로 다시 설정
+    while (currentDate <= endDate) {
+      var cellAttendance = document.createElement('td');
+      cellAttendance.textContent = ''; // 여기에 출석 상태 추가
+      studentRow.appendChild(cellAttendance);
+
+      // 오늘 날짜에 해당하는 출석 상태 입력
+      if (currentDate.toDateString() === today.toDateString()) {
+        cellAttendance.textContent = '출석';
+      }
+
+      // 다음 날짜로 이동
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  }
+
+  // 오늘의 출석률 계산
+  var totalStudents = 5; // 예시로 5명의 학생
+  var attendanceCount = 0;
+  var attendanceRate = 0;
+
+  for (var i = 0; i < totalStudents; i++) {
+    var attendanceCell = tableBody.rows[i].cells[today.getDate() + 3]; // 번호, 학생명, 결석일 이후부터 출석 상태가 시작함 (index 3)
+    if (attendanceCell.textContent === '출석') {
+      attendanceCount++;
+    }
+  }
+
+  if (totalStudents > 0) {
+    attendanceRate = (attendanceCount / totalStudents) * 100;
+  }
+
+  // 출석률을 화면에 표시
+  var rateElement = document.getElementById('today-attendance-rate');
+  rateElement.textContent = '출석률: ' + attendanceRate.toFixed(2) + '%';
+}
+</script>
+
+</body>
+</html>

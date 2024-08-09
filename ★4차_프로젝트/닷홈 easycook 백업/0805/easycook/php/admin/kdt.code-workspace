@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../xampp/kdt"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "이슬"
+	}
+}
