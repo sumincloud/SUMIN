@@ -1,0 +1,14 @@
+
+
+.Header {
+  padding: 1rem;
+  color: navy;
+  text-align: center;
+  background: pink;
+}
+
+.Footer {
+  background-color: #20232a;
+  padding: 1rem;
+  color: #61dafb;
+}
