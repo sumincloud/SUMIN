@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>nav전체 확장</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box;  }
+ul, li { list-style: none }
+a { text-decoration: none; }
+
+header { margin: 0 auto; width: 1200px; height: 100px; position: relative; background-color: yellow; }
+nav { width: 600px; position: absolute; bottom: 0px; right: 30px; }
+nav > ul { overflow: hidden; }
+nav > ul > li { float: left; width: 25%; text-align: center; }
+nav > ul > li > a { display: inline-block; padding: 12px 0px; width: 100%;  color: black; font-weight: bold; }
+nav > ul > li:hover > a { color: red;  background: #f1f1f1; }
+
+.submenu { display: none; position: absolute; z-index: 99; text-align: center; /*여기 배경색은 이제 필요없습니다*/ }
+.submenu > li > a { display: inline-block; padding: 14px 0px; color: black; width: 150px ; font-size: 15px;  }
+.submenu > li > a:hover { background: #ccc; }
+
+.sub_back { display: none; position: absolute; z-index:88; top:100px; right: 0px; width: 1200px; height: 180px; background: #f1f1f1; }
+
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+<ul>
+  <li>
+  <a href="#">강원천문대</a>
+    <ul class="submenu">
+      <li><a href="#">천문대소개</a></li>
+      <li><a href="#">인사말</a></li>
+      <li><a href="#">오시는길</a></li>
+    </ul>
+  </li>
+  <li><a href="#">이용안내</a>
+    <ul class="submenu">
+      <li><a href="#">프로그램</a></li>
+      <li><a href="#">관람시간표</a></li>
+      <li><a href="#">이달의 별자리</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">천문대예약</a>
+    <ul class="submenu">
+      <li><a href="#">예약하기</a></li>
+      <li><a href="#">예약확인</a></li>
+      <li><a href="#">예약취소</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">커뮤니티</a>
+    <ul class="submenu">
+      <li><a href="#">공지사항</a></li>
+      <li><a href="#">방문후기</a></li>
+      <li><a href="#">자유게시판</a></li>
+    </ul>
+  </li>
+</ul>
+</nav>
+<div class="sub_back"></div>  <!--서브메뉴 아래에 깔릴 배경-->
+</header>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$("nav > ul > li, .sub_back ").mouseenter(function(){
+  $(".submenu, .sub_back ").stop().slideDown(400);
+});
+$("nav > ul > li, .sub_back ").mouseleave(function(){
+  $(".submenu, .sub_back ").stop().slideUp(100);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* base  - 기본 구조  - 브라우저 초기화 */
+*{ padding: 0;  margin: 0; font-family: "맑은 고딕"; color: #666666; }
+li{ list-style: none; }
+a{ text-decoration: none; }
+img{ border: none; }
+
+
+/* 구조들이 홈페이지 가운데 오게 하기 위한 설정  */ 
+body{ width: 1000px; margin: 0 auto; } 
+/* 와이어프레임에 가로 크기가 1000px이므로 작성 */
+
+/* 행간 구조 */
+header{ width: 1000px; height: 200px;  } /* 배경색 제거 */
+#main{ width: 1000px; height: 350px; } /* 배경색 제거 */
+#contents{ width: 1000px; height: 500px;  } /* 배경색 제거 */
+footer{ width: 1000px; height: 150px; background-color: #6a6a6a; }
+
+
+/* 열간 구조 */
+header h1{  /* 열간 구조는 왼쪽 나열을 위해 float:left 작성 */
+	float: left; width: 400px; height: 200px;  /* 배경색 제거 */
+}
+.mNav{ 
+	float: left; width: 600px; height: 200px;  /* 배경색 제거 */
+}
+.reiview, .intro, .popzone{ /* 클래스명 다음에 반드시 [,]로 구분 */
+	float: left; width: 300px; height: 230px; 
+	margin-top: 80px; margin-right: 50px;  /* 배경색 제거 */
+}
+.popzone{ margin-right: 0; } /* 마지막 박스에만 여백 없앰 */
+
+
+
+/* 메인메뉴 */
+.mNav > ul > li{
+	float: left;  /* 리스트 왼쪽 나열 */
+	width: 200px; height: 60px; 
+	margin-top: 70px; /* 위쪽 여백 설정 */
+	position: relative; 
+	/* 하위메뉴가 부모인 li에서 절대적 위치갖기 위해 설정 */
+}
+.mNav > ul > li > a{ /* 최종글자설정과 영역 설정 */
+	display: block; width: 200px; height: 60px; /* 영역 설정 */
+	text-align: center; line-height: 60px; /* 가로 세로 가운데 정렬 */
+	font-size: 18px; font-weight: bold; color: #666666; /* 글자설정 */
+}
+.mNav > ul > li > a:hover{  /* 마우스 올렸을 때의 설정 */
+	background-color: #40a3e4 ; /* 배경색 설정 */
+	color: #FFFFFF; /* 글자색 설정 */
+}
+
+
+/* 하위메뉴 */
+.sub{
+	width: 200px; /* 영역 설정 */
+	position: absolute; top: 60px; left: 0px; z-index: 1000;
+	/* 메인이미지 위에 뜨게 하기위해 절대적 위치 처리 */
+}
+.sub li{
+	width: 200px; height: 40px; /* 리스트한개 영역설정 */
+}
+.sub li a{
+	display: block; width: 200px; height: 40px; /* 링크영역설정 */
+	text-align: center; line-height: 40px; /* 가로세로 가운데 정렬 */
+	color: #FFFFFF; background-color: #40a3e4; 
+	/* 글자색 배경색 설정 */
+}
+.sub li a:hover{  /* 마우스 올렸을 때의 설정 */
+	background-color: #FFFFFF;  color: #40a3e4; 
+	/* 글자색 배경색 반전 */
+}
+
+
+
+
+/* 메인이미지 */
+#main{ 
+	position: relative; /* 이미지들의 위치 컨트롤 */
+	overflow:hidden;
+}
+#main ul{
+	width: 1000px; height: 350px;
+	/* 나열되지 않고 그자리에 위치 */
+
+	overflow: hidden; 
+	/* main영역 외로 넘어가는 이미지 안보이게 처리 */
+}
+#main li{
+	height:350px;overflow:hidden;
+	display: none; /* 처음부터 아무것도 안보이게 처리 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

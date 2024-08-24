@@ -1,0 +1,212 @@
+@charset "utf-8";
+*{margin: 0;padding: 0;}
+
+body{
+  background: #fff;
+  color: #222328;
+}
+section > h2{
+  display: none;
+}
+a, ul, li{
+  text-decoration: none;
+  list-style: none;
+  color: #222328;
+}
+
+
+/* -------------헤더 서식---------- */
+header{
+  background: pink;
+}
+header .h_inner{
+  width: 1200px; min-height: 100px;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+header .h_inner h1{
+  height: 100px;
+}
+header .h_inner h1 img{
+  height: 100%;
+}
+
+/* 내비게이션 */
+.menu{
+  display: flex;
+  position: relative;
+  top: 60px;
+  right: 30px;
+}
+.menu > li{
+  width: 150px; height: 40px;
+  text-align: center;
+}
+.menu > li > a{
+  line-height: 40px;
+  display: block;
+}
+.menu > li > a:hover{
+  background: rgb(0, 58, 60);
+  color: #fff;
+}
+
+.sub{
+  display: none;
+  position: relative;
+  z-index: 100;
+}
+.sub > li > a{
+  background: rgb(0, 58, 60);
+  line-height: 30px;
+  display: block;
+  color: #fff;
+}
+.sub > li > a:hover{
+  background: rgb(0, 171, 176);
+  color: #222328;
+}
+.sub_back{
+  display: none;
+  position: absolute;
+  top: 100px;
+  background: rgb(0, 58, 60);
+  width: 100%;height: 150px;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/* ----------------메인서식---------- */
+main{
+  width: 1200px;
+  margin: 0 auto;
+  background: seagreen;
+}
+/* 1. 슬라이드 */
+.slide{
+  height: 300px;
+  background: burlywood;
+  overflow: hidden;
+}
+.slide-wrapper{ /* 가로 버전 */
+  width: 300%;
+  display: flex;
+  position: relative;
+  left: 0;
+}
+/* .slide-wrapper{   //(세로 버전)
+  height: 900px;
+  position: relative;
+  top: 0;
+} */
+
+
+
+
+.slide-wrapper li{
+  position: relative;
+}
+.slide-wrapper h3{
+  position: absolute;
+  top: 50%;transform: translateY(-50%);
+  left: 50px;
+  color: #fff;
+  font-size: 28px;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+}
+.slide-wrapper img{
+  display: block;
+}
+
+
+
+
+
+
+/* 2. 컨텐츠 */
+.content{
+  display: flex;
+}
+.content article{
+  width: 100%;
+  height: 200px;
+}
+.content article h3{
+  margin-bottom: 10px;
+}
+/* 공지사항 */
+.notice{
+  background: orange;
+}
+.notice li a{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 70%;
+}
+
+
+
+
+
+/* 갤러리 */
+.gallery{
+  background: teal;
+}
+/* 배너 */
+.banner{
+  background: khaki;
+}
+
+
+/* 모달창 서식 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal{
+  position: fixed;
+  width: 300px; height: 300px;
+  padding: 20px;
+  top: 50%;left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  z-index: 1001;
+  line-height: 160%;
+}
+.modal h3{
+  margin-bottom: 10px;
+}
+.modal .c_btn{
+  float: right;
+  padding: 5px;
+}
+
+
+
+/* ---------------푸터서식------------ */
+footer{
+  background: pink;
+}
+footer .f_inner{
+  color: #fff;
+  background: #333;
+  width: 1200px; height: 100px;
+  margin: 0 auto;
+}
