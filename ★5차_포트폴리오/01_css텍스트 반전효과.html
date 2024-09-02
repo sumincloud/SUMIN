@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_css텍스트 반전효과</title>
+  <style>
+    *{margin:0;padding:0;}
+    body{background:#000;}
+    .circle{
+      width:500px;height:500px;
+      background:rgba(255, 224, 46, 0.952);
+      border-radius:50%;
+      /* margin:0px auto;
+      transform:translateY(42%); */
+      margin:auto;
+      position:absolute;
+      top:0px;left:0px;
+      right:0px;bottom:0px;
+      animation:ani infinite 5s;
+    }
+    .title{
+      position:absolute;
+      margin:auto;
+      left:0;right:0;bottom:0;top:0;
+      z-index:100;
+      width:500px;height:90px;
+      text-align:center;
+      font-size:80px;
+      color:#ff0;
+      mix-blend-mode: difference;
+    }
+
+    @keyframes ani{
+      0%{transform: scale(0.1);}
+      50%{transform:scale(2);}
+      100%{transform:scale(0.1);}
+    }
+  </style>
+</head>
+<body>
+  <h2>01_css텍스트 반전효과(색상대비)</h2>
+
+  <div class="circle"></div>
+  <h1 class="title">Portfolio</h1>
+
+
+
+</body>
+</html>
